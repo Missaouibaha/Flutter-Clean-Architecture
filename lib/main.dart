@@ -1,20 +1,7 @@
+import 'package:clean_arch_app/clean_arch_app.dart';
+import 'package:clean_arch_app/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World! '),
-        ),
-      ),
-    );
-  }
+  runApp(CleanArchApp(appRouter: AppRouter()));
 }
