@@ -1,3 +1,4 @@
+import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 extension NullableExtensions<T> on T? {
@@ -21,11 +22,11 @@ extension StringExtensions on String? {
 extension Regex on String {
   String? isValidateEmail() {
     if (isEmpty) {
-      return "Enter your Email";
+      return AppStrings.enterEmail;
     } else if (!RegExp(
       r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
     ).hasMatch(this)) {
-      return "Enter a valid Email adress";
+      return AppStrings.enterValidEmail;
     }
     return null;
   }
