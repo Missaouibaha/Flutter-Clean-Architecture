@@ -1,4 +1,5 @@
 import 'package:clean_arch_app/core/routing/app_router.dart';
+import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +15,7 @@ class CleanArchApp extends StatelessWidget {
       designSize: Size(360, 670),
       minTextAdapt: true,
       child: MaterialApp(
-        title: 'Clean Arch App',
+        title: AppStrings.appName,
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           primaryColor: Colors.blue,
