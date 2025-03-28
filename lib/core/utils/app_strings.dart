@@ -6,12 +6,20 @@ class AppStrings {
   static const String unknownError = " Unknown Error";
 
   static const String email = "Email";
+  static const String name = "Name";
+  static const String phone = "Phone";
   static const String password = "Password";
+  static const String confirmPassword = "Confirm Password";
+  static const String gender = "Gender :";
   static const String passwordLengthRestriction =
       "Password must be at least 8 characters";
+
+  static const String confirmPassLengthRestriction =
+      " password and confirm password are not identical";
   static const String enterEmail = "Enter your Email";
   static const String enterValidEmail = "Enter a valid Email adress";
   static const String signUp = "Sign Up";
+  static const String signIn = "Sign In";
 
   //login
 
@@ -28,4 +36,17 @@ class AppStrings {
   static const String termsAndconditionsSpan2 = "Terms & Conditions";
   static const String termsAndconditionsSpan3 = " and ";
   static const String termsAndconditionsSpan4 = "PrivacyPolicy. ";
+
+  // signUp
+  static const String createAccount = "Create Account";
+  static const String signupWelcomeMsg =
+      " Sign uo now and start exploring all that our apps has to offer . We're excited to welcome you to our community ! .";
+  static const String nameRestriction = "name must be at least 3 caracters";
+  static const String phoneRestriction =
+      "phone number must be at least 8 numbers";
+  static const String male = "Male";
+  static const String female = "Female";
+
+  static const String hvAccnt = "Already Have an account ?";
+  static const String enterGender ="Please select your gender.";
 }

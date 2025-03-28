@@ -37,7 +37,7 @@ class LoginRepositoryImplementation implements LoginRepository {
       });
       return ApiResult.success(response);
     } catch (error) {
-      print("$error") ;
+     
       return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
