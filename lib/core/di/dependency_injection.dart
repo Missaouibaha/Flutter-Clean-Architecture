@@ -4,6 +4,10 @@ import 'package:clean_arch_app/features/login/data/repository/login_repository_i
 import 'package:clean_arch_app/features/login/domain/repository/login_repository.dart';
 import 'package:clean_arch_app/features/login/domain/usecases/login_use_case.dart';
 import 'package:clean_arch_app/features/login/presentation/cubit/login_cubit.dart';
+import 'package:clean_arch_app/features/signup/data/repository/sign_up_repository_imp.dart';
+import 'package:clean_arch_app/features/signup/domain/repositpry/sign_up_repository.dart';
+import 'package:clean_arch_app/features/signup/domain/usecases/sign_up_use_case.dart';
+import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
@@ -39,33 +43,11 @@ Future<void> setUpGetIt() async {
   );
   getIt.registerLazySingleton<LoginUseCase>(() => LoginUseCase(getIt()));
   getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
+
+  //signup
+  getIt.registerLazySingleton<SignUpRepository>(
+    () => SignUpRepositoryImp(getIt(), getIt()),
+  );
+  getIt.registerLazySingleton<SignUpUseCase>(() => SignUpUseCase(getIt()));
+  getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
 }
-
-
-/*
-
-Form bb@bb.bb 
-
-╔╣ Request ║ POST 
-║
-╚══════════════════════════════════════════════════════════════════════════════════════════╝
-╔ Headers 
-╟ Accept: application/json
-╟ content-type: application/json
-╟ contentType: application/json
-╟ responseType: ResponseType.json
-╟ followRedirects: true
-╟ connectTimeout: 0:00:25.000000
-╟ receiveTimeout: 0:00:25.000000
-╚══════════════════════════════════════════════════════════════════════════════════════════╝
-╔ Body
-╟ email: bb@bb.bb
-╟ password: bobobobo
-╚══════════════════════════════════════════════════════════════════════════════════════════╝
-║ {email: bb@bb.bb, password: bobobobo}
-
-╔╣ DioError ║ Status: 404 Not Found ║ Time: 219 ms
-║
-╚══════════════════════════════════════════════════════════════════════════════════════════╝
-╚══════════════════════════════════════════════════════════════════════════════════════════╝
-*/
