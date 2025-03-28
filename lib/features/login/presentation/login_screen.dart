@@ -5,6 +5,7 @@ import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_button.dart';
 import 'package:clean_arch_app/core/widgets/divider_with_text.dart';
 import 'package:clean_arch_app/core/widgets/social_login_row.dart';
+import 'package:clean_arch_app/core/widgets/termes_conditions_view.dart';
 import 'package:clean_arch_app/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:clean_arch_app/features/login/presentation/widgets/login_form.dart';
 import 'package:clean_arch_app/features/login/presentation/widgets/remember_me_row.dart';
@@ -32,6 +33,14 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
 
   var rememberMe = false;
+
+  @override
+  void dispose() {
+    // Dispose of controllers to prevent memory leaks
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 verticalSpace(35.h),
                 const SocialLoginRow(),
                 verticalSpace(30.h),
-                _buildTermsAndConditions(),
+                TermesConditionsView(),
                 verticalSpace(25.h),
                 _buildSignUpRow(() => navigateTo(Routes.signUpScreen)),
                 const LoginBlocListener(),
@@ -98,29 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
         passwordController.text,
       );
     }
-  }
-
-  Widget _buildTermsAndConditions() {
-    return Center(
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          style: TextStyles.font14LightGrayRegular,
-          children: [
-            TextSpan(text: AppStrings.termsAndconditionsSpan1),
-            TextSpan(
-              text: AppStrings.termsAndconditionsSpan2,
-              style: TextStyles.font14DarckBlueMedium,
-            ),
-            TextSpan(text: AppStrings.termsAndconditionsSpan3),
-            TextSpan(
-              text: AppStrings.termsAndconditionsSpan4,
-              style: TextStyles.font14DarckBlueMedium,
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   Widget _buildSignUpRow(VoidCallback navigateToSignUp) {
