@@ -9,7 +9,7 @@ class SharedPreferencesHelper {
   SharedPreferencesHelper(this._prefs, this._flutterSecureStorage);
 
   Future<void> setData(String key, value) async {
-    switch (value) {
+    switch (value.runtimeType) {
       case String:
         await _prefs.setString(key, value);
         break;

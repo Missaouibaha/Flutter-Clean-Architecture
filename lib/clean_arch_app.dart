@@ -21,7 +21,7 @@ class CleanArchApp extends StatelessWidget {
           primaryColor: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.loginScreen,
+        initialRoute: Routes.splashScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
