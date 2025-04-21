@@ -8,6 +8,10 @@ import 'package:clean_arch_app/features/signup/data/repository/sign_up_repositor
 import 'package:clean_arch_app/features/signup/domain/repositpry/sign_up_repository.dart';
 import 'package:clean_arch_app/features/signup/domain/usecases/sign_up_use_case.dart';
 import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_cubit.dart';
+import 'package:clean_arch_app/features/splash/data/repository/splash_repository_implementation.dart';
+import 'package:clean_arch_app/features/splash/domain/repository/splash_repository.dart';
+import 'package:clean_arch_app/features/splash/domain/usecase/check_user_status_use_case.dart';
+import 'package:clean_arch_app/features/splash/presentation/cubit/splash_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
@@ -36,6 +40,15 @@ Future<void> setUpGetIt() async {
 
   //initApiService
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+
+  //Splash
+  getIt.registerLazySingleton<SplashRepository>(
+    () => SplashRepositoryImplementation(getIt()),
+  );
+  getIt.registerLazySingleton<CheckUserStatusUseCase>(
+    () => CheckUserStatusUseCase(getIt()),
+  );
+  getIt.registerLazySingleton<SplashCubit>(() => SplashCubit(getIt()));
 
   //login
   getIt.registerLazySingleton<LoginRepository>(

@@ -20,6 +20,10 @@ class AppStrings {
   static const String enterValidEmail = "Enter a valid Email adress";
   static const String signUp = "Sign Up";
   static const String signIn = "Sign In";
+  static const String unexpectedErrorOccurred =
+      "An error has occurred, please try again later";
+  static const String errorOccurredFetshUser =
+      "An error has occurred. Please try logging in.";
 
   //login
 
@@ -40,7 +44,7 @@ class AppStrings {
   // signUp
   static const String createAccount = "Create Account";
   static const String signupWelcomeMsg =
-      " Sign uo now and start exploring all that our apps has to offer . We're excited to welcome you to our community ! .";
+      " Sign up now and start exploring all that our apps has to offer . We're excited to welcome you to our community ! .";
   static const String nameRestriction = "name must be at least 3 caracters";
   static const String phoneRestriction =
       "phone number must be at least 8 numbers";
@@ -48,5 +52,5 @@ class AppStrings {
   static const String female = "Female";
 
   static const String hvAccnt = "Already Have an account ?";
-  static const String enterGender ="Please select your gender.";
+  static const String enterGender = "Please select your gender.";
 }
