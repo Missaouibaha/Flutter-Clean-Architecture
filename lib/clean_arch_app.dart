@@ -19,6 +19,9 @@ class CleanArchApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           primaryColor: Colors.blue,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.white,
+          ),
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.splashScreen,

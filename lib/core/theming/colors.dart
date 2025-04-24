@@ -7,7 +7,14 @@ class ColorManager {
   static const Color gray = Color(0xFFE5E5E5);
   static const Color red = Color.fromARGB(255, 255, 0, 0);
   static const Color lightGray = Color.fromARGB(255, 160, 160, 160);
+  static const Color transparentLightGray = Color.fromARGB(75, 230, 229, 229);
   static const Color extraLightGray = Color.fromARGB(255, 230, 229, 229);
   static const Color ultraGray = Color(0xFFFDFDFF);
   static const Color transparentGray = Color.fromARGB(87, 230, 229, 229);
+  static const Color black = Color(0xFF121212);
+  static const Color neutral = Color(0xFF242424);
+  static const Color transparentNeutral = Color(0x40242424);
+  static const Color lightBlue =  Color(0xffEAF2FF) ;
+    static const Color lightGreen =  Color(0xffE9FAEF) ;
+  static const Color lightPink =  Color(0xffFFEEEF) ;
 }

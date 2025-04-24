@@ -53,4 +53,30 @@ class AppStrings {
 
   static const String hvAccnt = "Already Have an account ?";
   static const String enterGender = "Please select your gender.";
+
+  // home
+
+  static const String homeNavBarLabel = "Home";
+  static const String chatNavBarLabel = "Chat";
+  static const String searchNavBarLabel = "Search";
+  static const String appointmentNavBarLabel = "Appointment";
+  static const String profileNavBarLabel = "Profile";
+
+  // image picker dialog
+  static const String gallery = "Choose from gallery";
+  static const String camera = 'Take a photo';
+
+  //profile
+
+  static const String profile = "Profile";
+  static const String userName = "User Name";
+
+  static const String userEmail = "User Email";
+
+  static const String myAppointment = "My Appointement";
+
+  static const String recordes = "Medical Records";
+  static const String personalInformation = "Personal Information";
+  static const String testAndDiagnostic = "My Test & Diagnostic ";
+  static const String payment = "Payment";
 }
