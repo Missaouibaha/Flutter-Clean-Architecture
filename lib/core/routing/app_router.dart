@@ -1,6 +1,7 @@
 import 'package:clean_arch_app/core/di/dependency_injection.dart';
 import 'package:clean_arch_app/features/login/presentation/cubit/login_cubit.dart';
 import 'package:clean_arch_app/features/login/presentation/login_screen.dart';
+import 'package:clean_arch_app/features/main/main_screen.dart';
 import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_cubit.dart';
 import 'package:clean_arch_app/features/signup/sign_up_screen.dart';
 import 'package:clean_arch_app/features/splash/presentation/cubit/splash_cubit.dart';
@@ -45,13 +46,12 @@ class AppRouter {
           },
         );
 
-      case Routes.homeScreen:
+      case Routes.mainScreen:
         return MaterialPageRoute(
           builder: (_) {
-            return Scaffold(body: Center(child: Text('------')));
+            return MainScreen();
           },
         );
-
       default:
         return MaterialPageRoute(
           builder: (_) {

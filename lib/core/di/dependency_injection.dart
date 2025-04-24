@@ -4,6 +4,10 @@ import 'package:clean_arch_app/features/login/data/repository/login_repository_i
 import 'package:clean_arch_app/features/login/domain/repository/login_repository.dart';
 import 'package:clean_arch_app/features/login/domain/usecases/login_use_case.dart';
 import 'package:clean_arch_app/features/login/presentation/cubit/login_cubit.dart';
+import 'package:clean_arch_app/features/profile/data/repository/profile_repository_implementation.dart';
+import 'package:clean_arch_app/features/profile/domain/repository/profile_repository.dart';
+import 'package:clean_arch_app/features/profile/domain/usecases/get_profile_use_case.dart';
+import 'package:clean_arch_app/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:clean_arch_app/features/signup/data/repository/sign_up_repository_imp.dart';
 import 'package:clean_arch_app/features/signup/domain/repositpry/sign_up_repository.dart';
 import 'package:clean_arch_app/features/signup/domain/usecases/sign_up_use_case.dart';
@@ -63,4 +67,13 @@ Future<void> setUpGetIt() async {
   );
   getIt.registerLazySingleton<SignUpUseCase>(() => SignUpUseCase(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
+
+  //profile
+  getIt.registerLazySingleton<ProfileRepository>(
+    () => ProfileRepositoryImplementation(getIt(), getIt()),
+  );
+  getIt.registerLazySingleton<GetProfileUseCase>(
+    () => GetProfileUseCase(getIt()),
+  );
+  getIt.registerLazySingleton<ProfileCubit>(() => ProfileCubit(getIt()));
 }

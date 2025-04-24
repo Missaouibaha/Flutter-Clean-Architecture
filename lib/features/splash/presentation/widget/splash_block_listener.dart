@@ -18,7 +18,7 @@ class SplashBlockListener extends StatelessWidget {
         state.whenOrNull(
           successCheckStatus: (isLoggedIn) {
             if (isLoggedIn) {
-              context.pushReplacementNamed(Routes.homeScreen);
+              context.pushReplacementNamed(Routes.mainScreen);
             } else {
               context.pushReplacementNamed(Routes. loginScreen);
             }
