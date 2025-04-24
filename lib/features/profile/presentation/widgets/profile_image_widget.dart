@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:clean_arch_app/core/theming/colors.dart';
+import 'package:clean_arch_app/core/utils/app_assets.dart';
 import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -23,22 +25,21 @@ class _ProfileImageWidgetState extends State<ProfileImageWidget> {
         GestureDetector(
           onTap: _showImagePickerDialog,
           child: CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: AppDimensions.radius60,
+            backgroundColor: ColorManager.white,
+            radius: AppDimensions.radius_60,
             foregroundImage:
                 _imageFile != null
                     ? FileImage(_imageFile!)
-                    : AssetImage("assets/images/user_avatar.png")
-                        as ImageProvider,
+                    : AssetImage(AppAssets.iconUserAvatar) as ImageProvider,
           ),
         ),
         Positioned(
-          right: -AppDimensions.padding2,
-          bottom: AppDimensions.padding10,
+          right: -AppDimensions.padding_2,
+          bottom: AppDimensions.padding_10,
           child: CircleAvatar(
             backgroundColor: Colors.white,
-            radius: AppDimensions.radius12,
-            child: ImageIcon(AssetImage("assets/images/icon_edit.png")),
+            radius: AppDimensions.radius_12,
+            child: ImageIcon(AssetImage(AppAssets.iconEdit)),
           ),
         ),
       ],

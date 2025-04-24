@@ -1,6 +1,7 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
 import 'package:clean_arch_app/core/routing/routes.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_button.dart';
 import 'package:clean_arch_app/core/widgets/divider_with_text.dart';
@@ -11,7 +12,6 @@ import 'package:clean_arch_app/features/login/presentation/widgets/login_form.da
 import 'package:clean_arch_app/features/login/presentation/widgets/remember_me_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theming/styles.dart';
 import 'cubit/login_cubit.dart';
@@ -36,7 +36,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // Dispose of controllers to prevent memory leaks
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -47,24 +46,24 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+          padding: EdgeInsets.all(AppDimensions.padding_25),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(AppStrings.welcomeBack, style: TextStyles.font32BlueBold),
-                verticalSpace(15.h),
+                verticalSpace(AppDimensions.height_15),
                 Text(
                   AppStrings.welcomeMsg,
                   style: TextStyles.font16LightGrayMedium,
                 ),
-                verticalSpace(25.h),
+                verticalSpace(AppDimensions.height_25),
                 LoginForm(
                   formKey: formKey,
                   emailController: emailController,
                   passwordController: passwordController,
                 ),
-                verticalSpace(20.h),
+                verticalSpace(AppDimensions.height_20),
                 RememberMeRow(
                   rememberMe: rememberMe,
                   onRememberMeChanged: (value) {
@@ -75,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onForgotPasswordPressed:
                       () => navigateTo(Routes.forgetPasswordScreen),
                 ),
-                verticalSpace(30),
+                verticalSpace(AppDimensions.height_30),
                 AppTextButton(
                   buttonText: AppStrings.login,
                   textStyle: TextStyles.font16WhiteSemiBold,
@@ -83,13 +82,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     validateThenLogin(context);
                   },
                 ),
-                verticalSpace(40.h),
+                verticalSpace(AppDimensions.height_40),
                 DividerWithText(text: AppStrings.orSigninWith),
-                verticalSpace(35.h),
+                verticalSpace(AppDimensions.height_35),
                 const SocialLoginRow(),
-                verticalSpace(30.h),
+                verticalSpace(AppDimensions.height_30),
                 TermesConditionsView(),
-                verticalSpace(25.h),
+                verticalSpace(AppDimensions.height_25),
                 _buildSignUpRow(() => navigateTo(Routes.signUpScreen)),
                 const LoginBlocListener(),
               ],
@@ -114,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(AppStrings.hvntAccnt, style: TextStyles.font13BlackRegular),
-        horizontalSpace(3.w),
+        horizontalSpace(AppDimensions.width_3),
         GestureDetector(
           child: Text(AppStrings.signUp, style: TextStyles.font13BlueMedium),
           onTap: () {

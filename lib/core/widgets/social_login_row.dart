@@ -1,4 +1,6 @@
 import 'package:clean_arch_app/core/theming/colors.dart';
+import 'package:clean_arch_app/core/utils/app_assets.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,11 +12,11 @@ class SocialLoginRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildSocialIcon('assets/svgs/gg_logo_login.svg'),
-        SizedBox(width: 30),
-        _buildSocialIcon('assets/svgs/fcb_logo_login.svg'),
-        SizedBox(width: 30),
-        _buildSocialIcon('assets/svgs/ios_logo_login.svg'),
+        _buildSocialIcon(AppAssets.googleLogo),
+        SizedBox(width: AppDimensions.width_30),
+        _buildSocialIcon(AppAssets.facebookLogo),
+        SizedBox(width: AppDimensions.width_30),
+        _buildSocialIcon(AppAssets.iosLogo),
       ],
     );
   }
@@ -22,8 +24,12 @@ class SocialLoginRow extends StatelessWidget {
   Widget _buildSocialIcon(String assetPath) {
     return CircleAvatar(
       backgroundColor: ColorManager.transparentGray,
-      minRadius: 30,
-      child: SvgPicture.asset(assetPath, width: 40, height: 40),
+      minRadius: AppDimensions.radius_30,
+      child: SvgPicture.asset(
+        assetPath,
+        width: AppDimensions.width_40,
+        height: AppDimensions.height_40,
+      ),
     );
   }
 }

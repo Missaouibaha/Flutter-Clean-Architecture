@@ -8,8 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileBlocListener extends StatelessWidget {
-  const ProfileBlocListener({super.key});
-
+  final Function(bool) onLoadingChanged ;
+  const ProfileBlocListener({super.key, required this.onLoadingChanged});
+   
   @override
   Widget build(BuildContext context) {
     return BlocListener<ProfileCubit, ProfileState>(
@@ -19,29 +20,18 @@ class ProfileBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
-            showDialog(
-              context: context,
-
-              builder:
-                  (context) => Center(
-                    child: CircularProgressIndicator(
-                      color: ColorManager.mainBlue,
-                    ),
-                  ),
-            );
+            onLoadingChanged(false);
           },
           success: (data) {
-            print('poped on success');
-            context.pop();
+            onLoadingChanged(true);
           },
           error: (error) {
-            print('poped on fail');
-            context.pop();
+            onLoadingChanged(true);
             showDialog(
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  backgroundColor: Colors.white,
+                  backgroundColor: ColorManager.white,
                   content: Text(error, style: TextStyles.font14DarckBlueMedium),
                   actions: [
                     TextButton(

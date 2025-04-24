@@ -11,5 +11,4 @@ class UserData {
   UserData({ this.id, this.name ,this.email,this.phone,this.gender});
   factory UserData.fromJson(Map<String,dynamic> json) => _$UserDataFromJson(json) ;
 
-
 }

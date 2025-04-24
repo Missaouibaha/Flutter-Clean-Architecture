@@ -1,3 +1,4 @@
+import 'package:clean_arch_app/core/utils/app_assets.dart';
 import 'package:clean_arch_app/features/splash/presentation/cubit/splash_cubit.dart';
 import 'package:clean_arch_app/features/splash/presentation/widget/splash_block_listener.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/doc_logo_splash.png'),
+                Image.asset(AppAssets.imageDocLogo),
                 SplashBlockListener(),
               ],
             ),

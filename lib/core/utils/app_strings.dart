@@ -79,4 +79,29 @@ class AppStrings {
   static const String personalInformation = "Personal Information";
   static const String testAndDiagnostic = "My Test & Diagnostic ";
   static const String payment = "Payment";
+
+  // api errors messages
+  static const String badRequestError =
+      "Something went wrong. Please try again.";
+  static const String noContentError =
+      "No content available,Please try again later.";
+  static const String forbiddenError =
+      "You don’t have permission to access this resource.";
+  static const String unauthorizedError =
+      "Session expired. Please log in again.";
+  static const String notFoundError =
+      "Oops! We can't find the item you requested.";
+  static const String conflictError = "Something went wrong. Please try again.";
+  static const String internalServerError =
+      "Server error. Please try again later.";
+  static const String unexpectedError =
+      "An unexpected error occurred. Please try again.";
+  static const String timeoutError =
+      "Request timed out. Please check your connection and try again.";
+  static const String defaultError = "Something went wrong. Please try again.";
+  static const String cacheError = "Something went wrong. Please try again.";
+  static const String noInternetError =
+      "No internet connection. Please check your network and try again.";
+  static const String loadingMessage = "Loading, please wait...";
+  static const String retryAgainMessage = "Please retry again.";
 }
