@@ -39,7 +39,7 @@ class LoginBlocListener extends StatelessWidget {
             showDialog(
               context: context,
               builder:
-                  (context) => AlertDialog(backgroundColor: Colors.white,
+                  (context) => AlertDialog(backgroundColor: ColorManager.white,
                     content: Text(
                       loginError,
                       style: TextStyles.font14DarckBlueMedium,

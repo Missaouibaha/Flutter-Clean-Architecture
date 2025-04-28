@@ -1,5 +1,7 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
+import 'package:clean_arch_app/core/utils/app_consts.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +37,7 @@ class _LoginFormState extends State<LoginForm> {
               return value?.isValidateEmail();
             },
           ),
-          verticalSpace(12),
+          verticalSpace(AppDimensions.height_12),
           AppTextFormField(
             hintText: AppStrings.password,
             isObscureText: isObscureText,
@@ -51,7 +53,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
             textController: widget.passwordController,
             validator: (value) {
-              if (value == null || value.length < 8) {
+              if (value == null || value.length < AppConsts.minPasswordLength) {
                 return AppStrings.passwordLengthRestriction;
               }
               return null;

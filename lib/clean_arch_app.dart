@@ -1,4 +1,6 @@
 import 'package:clean_arch_app/core/routing/app_router.dart';
+import 'package:clean_arch_app/core/theming/colors.dart';
+import 'package:clean_arch_app/core/utils/app_consts.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,15 +14,18 @@ class CleanArchApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(360, 670),
+      designSize: Size(
+        AppConsts.designScreenWidth,
+        AppConsts.designScreenHeight,
+      ),
       minTextAdapt: true,
       child: MaterialApp(
         title: AppStrings.appName,
         theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: Colors.blue,
+          scaffoldBackgroundColor: ColorManager.white,
+          primaryColor: ColorManager.mainBlue,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: Colors.white,
+            backgroundColor: ColorManager.white,
           ),
         ),
         debugShowCheckedModeBanner: false,

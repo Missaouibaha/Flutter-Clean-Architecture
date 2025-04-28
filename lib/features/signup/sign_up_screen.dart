@@ -1,6 +1,7 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_button.dart';
 import 'package:clean_arch_app/core/widgets/divider_with_text.dart';
@@ -11,7 +12,6 @@ import 'package:clean_arch_app/features/signup/presentation/widgets/sign_up_bloc
 import 'package:clean_arch_app/features/signup/presentation/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
@@ -43,7 +43,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   void dispose() {
-    // Dispose of controllers to prevent memory leaks
     nameController.dispose();
     emailController.dispose();
     phoneController.dispose();
@@ -59,19 +58,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            padding: EdgeInsets.all(AppDimensions.height_20),
             child: Column(
               children: [
                 Text(
                   AppStrings.createAccount,
                   style: TextStyles.font32BlueBold,
                 ),
-                verticalSpace(15.h),
+                verticalSpace(AppDimensions.height_15),
                 Text(
                   AppStrings.signupWelcomeMsg,
                   style: TextStyles.font16LightGrayMedium,
                 ),
-                verticalSpace(25.h),
+                verticalSpace(AppDimensions.height_25),
                 SignUpForm(
                   nameController: nameController,
                   emailController: emailController,
@@ -81,7 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   genderController: genderController,
                   formKey: formKey,
                 ),
-                verticalSpace(30),
+                verticalSpace(AppDimensions.height_30),
                 AppTextButton(
                   buttonText: AppStrings.createAccount,
                   textStyle: TextStyles.font16WhiteSemiBold,
@@ -89,13 +88,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     validateThenRegister(context);
                   },
                 ),
-                verticalSpace(40.h),
+                verticalSpace(AppDimensions.height_40),
                 DividerWithText(text: AppStrings.orSigninWith),
-                verticalSpace(35.h),
+                verticalSpace(AppDimensions.height_35),
                 const SocialLoginRow(),
-                verticalSpace(30.h),
+                verticalSpace(AppDimensions.height_30),
                 TermesConditionsView(),
-                verticalSpace(25.h),
+                verticalSpace(AppDimensions.height_25),
                 _buildSigninRow(() => context.pop()),
                 SignUpBlocListener(),
               ],
@@ -111,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(AppStrings.hvAccnt, style: TextStyles.font13BlackRegular),
-        horizontalSpace(3.w),
+        horizontalSpace(AppDimensions.width_3),
         GestureDetector(
           child: Text(AppStrings.signIn, style: TextStyles.font13BlueMedium),
           onTap: () {

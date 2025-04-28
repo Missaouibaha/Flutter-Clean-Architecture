@@ -1,3 +1,6 @@
+import 'package:clean_arch_app/core/theming/colors.dart';
+import 'package:clean_arch_app/core/theming/styles.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -23,15 +26,14 @@ class RememberMeRow extends StatelessWidget {
           children: [
             Checkbox(
               value: rememberMe,
-              onChanged:
-                  onRememberMeChanged, 
-              activeColor: Colors.blueAccent,
-              checkColor: Colors.white,
+              onChanged: onRememberMeChanged,
+              activeColor: ColorManager.blueAccent,
+              checkColor: ColorManager.black,
             ),
-            SizedBox(width: 8),
+            SizedBox(width: AppDimensions.width_8),
             Text(
               AppStrings.rememberMe,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyles.font16LightGrayMedium,
             ),
           ],
         ),
@@ -39,7 +41,7 @@ class RememberMeRow extends StatelessWidget {
           onTap: onForgotPasswordPressed,
           child: Text(
             AppStrings.forgetPasswordMsg,
-            style: TextStyle(fontSize: 14, color: Colors.blue),
+            style: TextStyles.font14BlueRegular,
           ),
         ),
       ],

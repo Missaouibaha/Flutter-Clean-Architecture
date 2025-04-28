@@ -23,11 +23,11 @@ class ProfileListTile extends StatelessWidget {
         ListTile(
           onTap: onTap,
           leading: CircleAvatar(
-            radius: AppDimensions.radius20,
+            radius: AppDimensions.radius_20,
             backgroundColor: backgroundColor,
             child: SizedBox(
-              height: AppDimensions.height20,
-              width: AppDimensions.width20,
+              height: AppDimensions.height_20,
+              width: AppDimensions.width_20,
               child: Image.asset(imagePath),
             ),
           ),
@@ -35,9 +35,9 @@ class ProfileListTile extends StatelessWidget {
         ),
         Divider(
           color: ColorManager.extraLightGray,
-          thickness: AppDimensions.dividerThickness,
-          indent: AppDimensions.padding10,
-          endIndent: AppDimensions.padding10,
+          thickness: AppDimensions.dividerThickness_1,
+          indent: AppDimensions.padding_10,
+          endIndent: AppDimensions.padding_10,
         ),
       ],
     );

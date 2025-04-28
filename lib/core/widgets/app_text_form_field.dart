@@ -1,5 +1,5 @@
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../theming/colors.dart';
 import '../theming/styles.dart';
@@ -44,27 +44,36 @@ class AppTextFormField extends StatelessWidget {
         isDense: true,
         contentPadding:
             contentPadding ??
-            EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            EdgeInsets.symmetric(
+              horizontal: AppDimensions.width_20,
+              vertical: AppDimensions.height_15,
+            ),
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(color: ColorManager.mainBlue, width: 1.3),
-              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(
+                color: ColorManager.mainBlue,
+                width: AppDimensions.width_1,
+              ),
+              borderRadius: BorderRadius.circular(AppDimensions.radius_16),
             ),
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
               borderSide: BorderSide(
                 color: ColorManager.extraLightGray,
-                width: 1.3,
+                width: AppDimensions.width_1,
               ),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppDimensions.radius_16),
             ),
         errorBorder:
             errorBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(color: ColorManager.red, width: 1.3),
-              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(
+                color: ColorManager.red,
+                width: AppDimensions.width_1,
+              ),
+              borderRadius: BorderRadius.circular(AppDimensions.radius_16),
             ),
         fillColor: fillColor ?? ColorManager.ultraGray,
         filled: true,

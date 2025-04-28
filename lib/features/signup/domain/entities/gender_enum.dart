@@ -1,6 +1,9 @@
+import 'package:clean_arch_app/core/utils/app_consts.dart';
+import 'package:clean_arch_app/core/utils/app_strings.dart';
+
 enum Gender {
-  male("Male", 0),
-  female('Female', 1);
+  male(AppStrings.male, AppConsts.genderMaleValue),
+  female(AppStrings.female, AppConsts.genderFemaleValue);
 
   final String genderName;
   final int genderValue;

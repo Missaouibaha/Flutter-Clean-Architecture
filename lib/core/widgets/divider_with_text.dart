@@ -1,4 +1,5 @@
 import 'package:clean_arch_app/core/theming/styles.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:flutter/material.dart';
 
 class DividerWithText extends StatelessWidget {
@@ -10,9 +11,21 @@ class DividerWithText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: Divider(thickness: 2, indent: 5, endIndent: 5)),
+        Expanded(
+          child: Divider(
+            thickness: AppDimensions.dividerThickness_2,
+            indent: AppDimensions.padding_5,
+            endIndent: AppDimensions.padding_5,
+          ),
+        ),
         Text(text, style: TextStyles.font16LightGrayMedium),
-        Expanded(child: Divider(thickness: 2, indent: 5, endIndent: 5)),
+        Expanded(
+          child: Divider(
+            thickness: AppDimensions.dividerThickness_2,
+            indent: AppDimensions.padding_5,
+            endIndent: AppDimensions.padding_5,
+          ),
+        ),
       ],
     );
   }

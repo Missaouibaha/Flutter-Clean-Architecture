@@ -1,3 +1,4 @@
+import 'package:clean_arch_app/core/utils/app_consts.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/features/splash/domain/usecase/check_user_status_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,7 @@ class SplashCubit extends Cubit<SplashState> {
 
   void emitCheckStatus() async {
     final isLoggedIn = await checkUserStatusUseCase.call();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: AppConsts.splashDelay));
     isLoggedIn.fold(
       (failure) {
         emit(

@@ -1,9 +1,9 @@
-import 'package:bloc/bloc.dart';
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/networking/api_error_model.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/features/signup/domain/usecases/sign_up_use_case.dart';
 import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUpUseCase signUpUseCase;
@@ -46,7 +46,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     if (errorResponse.errors != null) {
       var firstError = errorResponse.errors!.values.first;
       if (firstError is List && firstError.isNotEmpty) {
-        return firstError.first.toString(); // Return the first error message
+        return firstError.first.toString(); 
       }
     }
     return errorResponse.message ?? AppStrings.unknownError;

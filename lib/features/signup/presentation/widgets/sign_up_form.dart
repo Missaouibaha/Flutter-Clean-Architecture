@@ -1,10 +1,12 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
+import 'package:clean_arch_app/core/theming/colors.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
+import 'package:clean_arch_app/core/utils/app_consts.dart';
+import 'package:clean_arch_app/core/utils/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({
@@ -54,13 +56,14 @@ class _SignUpFormState extends State<SignUpForm> {
             hintText: AppStrings.name,
             textController: widget.nameController,
             validator: (name) {
-              if (name.isNullOrEmpty || name!.length < 3) {
+              if (name.isNullOrEmpty ||
+                  name!.length < AppConsts.minNameLength) {
                 return AppStrings.nameRestriction;
               }
               return null;
             },
           ),
-          verticalSpace(15.h),
+          verticalSpace(AppDimensions.height_15),
           AppTextFormField(
             hintText: AppStrings.email,
             textController: widget.emailController,
@@ -68,18 +71,19 @@ class _SignUpFormState extends State<SignUpForm> {
               return email?.isValidateEmail();
             },
           ),
-          verticalSpace(15.h),
+          verticalSpace(AppDimensions.height_15),
           AppTextFormField(
             hintText: AppStrings.phone,
             textController: widget.phoneController,
             inputType: TextInputType.number,
             validator: (phone) {
-              if (phone.isNullOrEmpty || phone!.length < 8) {
+              if (phone.isNullOrEmpty ||
+                  phone!.length < AppConsts.minPhoneLength) {
                 return AppStrings.phoneRestriction;
               }
             },
           ),
-          verticalSpace(15.h),
+          verticalSpace(AppDimensions.height_15),
           AppTextFormField(
             hintText: AppStrings.password,
             textController: widget.passwordController,
@@ -95,13 +99,14 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ),
             validator: (password) {
-              if (password == null || password.length < 8) {
+              if (password == null ||
+                  password.length < AppConsts.minPasswordLength) {
                 return AppStrings.passwordLengthRestriction;
               }
               return null;
             },
           ),
-          verticalSpace(15.h),
+          verticalSpace(AppDimensions.height_15),
           AppTextFormField(
             hintText: AppStrings.confirmPassword,
             textController: widget.confirmPasswordController,
@@ -114,25 +119,25 @@ class _SignUpFormState extends State<SignUpForm> {
               return null;
             },
           ),
-          verticalSpace(15.h),
+          verticalSpace(AppDimensions.height_15),
           Row(
             children: [
               Text(AppStrings.gender, style: TextStyles.font13BlackRegular),
-              horizontalSpace(10.w),
+              horizontalSpace(AppDimensions.width_10),
               Text(AppStrings.male),
               Checkbox(
                 value: isMale,
                 onChanged: (value) => _updateSelection(AppStrings.male),
-                activeColor: Colors.blueAccent,
-                checkColor: Colors.white,
+                activeColor: ColorManager.blueAccent,
+                checkColor: ColorManager.white,
               ),
-              horizontalSpace(8.w),
+              horizontalSpace(AppDimensions.width_8),
               Text(AppStrings.female),
               Checkbox(
                 value: isFemale,
                 onChanged: (value) => _updateSelection(AppStrings.female),
-                activeColor: Colors.blueAccent,
-                checkColor: Colors.white,
+                activeColor: ColorManager.blueAccent,
+                checkColor: ColorManager.white,
               ),
             ],
           ),

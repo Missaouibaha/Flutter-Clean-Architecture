@@ -1,52 +1,71 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class AppDimensions {
   // Heights
-  static const double height4 = 4;
-  static const double height5 = 5;
-  static const double height8 = 8;
-  static const double height10 = 10;
-  static const double height15 = 15;
-  static const double height20 = 20;
-  static const double height25 = 25;
-  static const double height40 = 40;
-  static const double height50 = 50;
-  static const double height70 = 70;
-  static const double height100 = 100;
+  static double height_4 = 4.h;
+  static double height_5 = 5.h;
+  static double height_8 = 8.h;
+  static double height_10 = 10.h;
+  static double height_12 = 12.h;
+  static double height_14 = 14.h;
+  static double height_15 = 15.h;
+  static double height_20 = 20.h;
+  static double height_25 = 25.h;
+  static double height_30 = 30.h;
+  static double height_35 = 30.h;
+  static double height_40 = 40.h;
+  static double height_50 = 50.h;
+  static double height_70 = 70.h;
+  static double height_100 = 100.h;
 
   // Widths
-  static const double width4 = 4;
-  static const double width8 = 8;
-  static const double width10 = 10;
-  static const double width20 = 20;
-  static const double width50 = 50;
-  static const double width70 = 70;
+
+  static double width_1 = 1.w;
+  static double width_2 = 2.w;
+  static double width_3 = 3.w;
+  static double width_4 = 4.w;
+  static double width_8 = 8.w;
+  static double width_10 = 10.w;
+  static double width_12 = 12.w;
+  static double width_20 = 20.w;
+  static double width_30 = 30.w;
+  static double width_40 = 40.w;
+  static double width_50 = 50.w;
+  static double width_70 = 70.w;
+  static double width_100 = 100.w;
+  static double width_120 = 120.w;
+  static double width_150 = 150.w;
 
   // Padding
 
-  static const double padding2 = 2;
-  static const double padding4 = 4;
-  static const double padding5 = 5;
-  static const double padding8 = 8;
-  static const double padding10 = 10;
-  static const double padding20 = 20;
-  static const double padding25 = 25;
-  static const double paddingHorizontal5 = 5;
-  static const double paddingHorizontal8 = 8;
-  static const double paddingHorizontal25 = 25;
+  static double padding_2 = 2.w;
+  static double padding_4 = 4.w;
+  static double padding_5 = 5.w;
+  static double padding_8 = 8.w;
+  static double padding_10 = 10.w;
+  static double padding_20 = 20.w;
+  static double padding_25 = 25.w;
+  static double paddingHorizontal_5 = 5.h;
+  static double paddingHorizontal_8 = 8.h;
+  static double paddingHorizontal_25 = 25.h;
 
   // Radius
-  static const double radius10 = 10;
-  static const double radius12 = 12;
-  static const double radius20 = 20;
-  static const double radius60 = 60;
+  static double radius_10 = 10.r;
+  static double radius_12 = 12.r;
+  static double radius_16 = 16.r;
+  static double radius_20 = 20.r;
+  static double radius_30 = 30.r;
+  static double radius_60 = 60.r;
 
   // Icon sizes
-  static const double iconSize22 = 22;
-  static const double avatarRadius = 20;
+  static double iconSize_22 = 22.w;
+  static double avatarRadius_20 = 20.r;
 
   // Divider thickness
-  static const double dividerThickness = 1;
-  static const double verticalDividerThickness = 2;
+  static double dividerThickness_1 = 1.w;
+  static double dividerThickness_2 = 2.w;
+  static double verticalDividerThickness_2 = 2.h;
 
   // Misc
-  static const double profileImageOffset = -60;
+  static double profileImageOffset_60 = -60.h;
 }

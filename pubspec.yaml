@@ -56,7 +56,11 @@ dependencies:
   #Functional Programming in Dart. Purify your Dart code using efficient immutable data structures, monads, lenses and other FP tools.
   dartz: ^0.10.1
 
+  #Flutter plugin for selecting images from the Android and iOS image library, and taking new pictures with the camera.
   image_picker: ^1.0.0
+  
+  #A package provides an easy way to add shimmer effect in Flutter project
+  shimmer: ^3.0.0
 
 
 

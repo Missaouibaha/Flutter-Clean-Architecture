@@ -1,4 +1,5 @@
 import 'package:clean_arch_app/core/theming/colors.dart';
+import 'package:clean_arch_app/core/utils/app_assets.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       currentIndex: currentIndex,
       onTap: onTap,
       unselectedItemColor: ColorManager.darckBlue,
@@ -23,22 +24,22 @@ class CustomBottomNavBar extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
           label: AppStrings.homeNavBarLabel,
-          icon: ImageIcon(AssetImage("assets/images/icon_home.png")),
+          icon: ImageIcon(AssetImage(AppAssets.iconHome)),
         ),
 
         BottomNavigationBarItem(
           label: AppStrings.chatNavBarLabel,
-          icon: ImageIcon(AssetImage("assets/images/icon_chat.png")),
+          icon: ImageIcon(AssetImage(AppAssets.iconChat)),
         ),
 
         BottomNavigationBarItem(
           label: AppStrings.searchNavBarLabel,
-          icon: ImageIcon(AssetImage("assets/images/icon_search.png")),
+          icon: ImageIcon(AssetImage(AppAssets.iconSearch)),
         ),
 
         BottomNavigationBarItem(
           label: AppStrings.appointmentNavBarLabel,
-          icon: ImageIcon(AssetImage("assets/images/icon_appointments.png")),
+          icon: ImageIcon(AssetImage(AppAssets.iconAppointments)),
         ),
 
         BottomNavigationBarItem(
