@@ -59,6 +59,7 @@ class AppDimensions {
 
   // Icon sizes
   static double iconSize_22 = 22.w;
+  static double iconSize_24 = 24.w;
   static double avatarRadius_20 = 20.r;
 
   // Divider thickness

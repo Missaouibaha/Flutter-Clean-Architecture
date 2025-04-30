@@ -20,7 +20,7 @@ class SplashBlockListener extends StatelessWidget {
             if (isLoggedIn) {
               context.pushReplacementNamed(Routes.mainScreen);
             } else {
-              context.pushReplacementNamed(Routes. loginScreen);
+              context.pushReplacementNamed(Routes.loginScreen);
             }
           },
 
@@ -35,7 +35,7 @@ class SplashBlockListener extends StatelessWidget {
                       onPressed: () {
                         context.pushReplacementNamed(Routes.loginScreen);
                       },
-                      child: Text(AppStrings.OK),
+                      child: Text(AppStrings.ok),
                     ),
                   ],
                 );

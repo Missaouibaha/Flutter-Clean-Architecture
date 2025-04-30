@@ -1,8 +1,8 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/routing/routes.dart';
-import 'package:clean_arch_app/core/theming/colors.dart';
-import 'package:clean_arch_app/core/theming/styles.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
+import 'package:clean_arch_app/core/widgets/error_dialog.dart';
+import 'package:clean_arch_app/core/widgets/loading_indicator.dart';
 import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_cubit.dart';
 import 'package:clean_arch_app/features/signup/presentation/cubit/sign_up_state.dart';
 import 'package:flutter/material.dart';
@@ -23,64 +23,22 @@ class SignUpBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           loadingSignUp: () {
-            showDialog(
-              context: context,
-              builder:
-                  (context) => Center(
-                    child: CircularProgressIndicator(
-                      color: ColorManager.skyBlue,
-                    ),
-                  ),
-            );
+            LoadingIndicator.show(context);
           },
           successSignUp: (data) {
-            context.pop();
+            LoadingIndicator.hide(context);
             context.pushNamedAndRemoveUntil(
               Routes.mainScreen,
               predicate: (Route<dynamic> route) => false,
             );
           },
           errorSignUp: (error) {
-            context.pop();
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text(error, style: TextStyles.font14DarckBlueMedium),
-                  actions: [
-                    TextButton(
-                      onPressed: () => context.pop(),
-                      child: Text(
-                        AppStrings.OK,
-                        style: TextStyles.font14DarckBlueMedium,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            );
+            LoadingIndicator.hide(context);
+
+            ErrorDialog.show(context, error);
           },
           genderValidationError: () {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text(
-                    AppStrings.enterGender,
-                    style: TextStyles.font14DarckBlueMedium,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => context.pop(),
-                      child: Text(
-                        AppStrings.OK,
-                        style: TextStyles.font14DarckBlueMedium,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            );
+            ErrorDialog.show(context, AppStrings.enterGender);
           },
         );
       },
