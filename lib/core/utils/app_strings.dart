@@ -2,8 +2,9 @@ class AppStrings {
   //Global
 
   static const String appName = "Clean Arch App";
-  static const String OK = "OK";
+  static const String ok = "OK";
   static const String unknownError = " Unknown Error";
+  static const String cancel = "Cancel";
 
   static const String email = "Email";
   static const String name = "Name";
@@ -50,7 +51,6 @@ class AppStrings {
       "phone number must be at least 8 numbers";
   static const String male = "Male";
   static const String female = "Female";
-
   static const String hvAccnt = "Already Have an account ?";
   static const String enterGender = "Please select your gender.";
 
@@ -70,15 +70,21 @@ class AppStrings {
 
   static const String profile = "Profile";
   static const String userName = "User Name";
-
   static const String userEmail = "User Email";
-
   static const String myAppointment = "My Appointement";
-
   static const String recordes = "Medical Records";
   static const String personalInformation = "Personal Information";
   static const String testAndDiagnostic = "My Test & Diagnostic ";
   static const String payment = "Payment";
+
+  //setting
+  static const String setting = "Setting";
+  static const String notification = "Notification";
+  static const String faq = "FAQ";
+  static const String security = "Security";
+  static const String language = "Language";
+  static const String logout = "Logout";
+  static const String logoutConfirmationMessage ="Are you sure you want to logout?" ;
 
   // api errors messages
   static const String badRequestError =

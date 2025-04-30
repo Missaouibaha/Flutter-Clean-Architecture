@@ -53,6 +53,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: Colors.white,
   );
+   static TextStyle font22WhiteRegular = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.white,
+  );
   static TextStyle font10BlackRegular = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeightHelper.regular,
@@ -68,6 +73,11 @@ class TextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
+  );
+     static TextStyle font1Pink4Regular = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.pink,
   );
      static TextStyle font12NeutralRegular = TextStyle(
     fontSize: 12.sp,

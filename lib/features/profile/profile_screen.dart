@@ -1,4 +1,6 @@
+import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
+import 'package:clean_arch_app/core/routing/routes.dart';
 import 'package:clean_arch_app/core/theming/colors.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
 import 'package:clean_arch_app/core/utils/app_assets.dart';
@@ -42,16 +44,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Padding(
             padding: EdgeInsets.all(AppDimensions.paddingHorizontal_8),
             child: GestureDetector(
+              onTap: () {
+                context.pushNamed(Routes.settingScreen);
+              },
               child: Icon(
                 Icons.settings,
                 color: ColorManager.white,
-                size: AppDimensions.iconSize_22,
+                size: AppDimensions.iconSize_24,
               ),
             ),
           ),
         ],
         centerTitle: true,
-        title: Text(AppStrings.profile, style: TextStyles.font18WhiteRegular),
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(AppStrings.profile, style: TextStyles.font22WhiteRegular),
+        ),
       ),
       body: SafeArea(
         child: Padding(

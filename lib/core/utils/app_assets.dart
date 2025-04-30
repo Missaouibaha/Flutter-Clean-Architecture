@@ -18,4 +18,11 @@ class AppAssets {
   static const iconSearch = 'assets/images/icon_search.png';
   static const iconChat = 'assets/images/icon_chat.png';
   static const iconHome = 'assets/images/icon_home.png';
+
+  //setting
+  static const iconNotification = 'assets/images/icon_notification.png';
+  static const iconFaq = 'assets/images/icon_faq.png';
+  static const iconSecurity = 'assets/images/icon_lock.png';
+  static const iconLanguage = 'assets/images/icon_language.png';
+  static const iconLogout = 'assets/images/icon_logout.png';
 }

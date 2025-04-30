@@ -80,7 +80,7 @@ class SharedPreferencesHelper {
   }
 
   // secure data
-  Future<void> setSecureString(String key, String value) async {
+  Future<void> setSecureString(String key, String? value) async {
     await _flutterSecureStorage.write(key: key, value: value);
   }
 
