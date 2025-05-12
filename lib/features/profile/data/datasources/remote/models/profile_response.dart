@@ -1,4 +1,4 @@
-import 'package:clean_arch_app/features/profile/data/models/user_data.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/remote/models/user_data.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'profile_response.g.dart';

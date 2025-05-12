@@ -1,4 +1,4 @@
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:flutter/material.dart';
 
 import '../theming/colors.dart';

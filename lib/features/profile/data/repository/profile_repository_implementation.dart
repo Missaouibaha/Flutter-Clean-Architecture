@@ -1,31 +1,43 @@
-import 'package:clean_arch_app/core/helper/local/shared_preferences_helper.dart';
-import 'package:clean_arch_app/core/helper/local/shared_preferences_keys.dart';
+import 'package:clean_arch_app/core/networking/api_constants.dart';
 import 'package:clean_arch_app/core/networking/api_error_handler.dart';
 import 'package:clean_arch_app/core/networking/api_result.dart';
-import 'package:clean_arch_app/core/networking/api_service.dart';
-import 'package:clean_arch_app/features/profile/data/models/profile_response.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/local/profile_local_data_source.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/remote/profile_remote_data_source.dart';
+import 'package:clean_arch_app/features/profile/data/mappers/user_data_mapper.dart';
+import 'package:clean_arch_app/features/profile/domain/entities/user.dart';
 import 'package:clean_arch_app/features/profile/domain/repository/profile_repository.dart';
 
 class ProfileRepositoryImplementation implements ProfileRepository {
-  final ApiService _apiService;
-  final SharedPreferencesHelper _sharedPreferencesHelper;
+  final ProfileLocalDataSource _profileLocalDataSource;
+  final ProfileRemoteDataSource _profileRemoteDataSource;
 
   ProfileRepositoryImplementation(
-    this._apiService,
-    this._sharedPreferencesHelper,
+    this._profileLocalDataSource,
+    this._profileRemoteDataSource,
   );
 
   @override
-  Future<ApiResult<ProfileResponse>> getProfile() async {
-    try {
-      final token = await _sharedPreferencesHelper.getSecureString(
-        SharedPreferencesKeys.token,
+  Future<ApiResult<User>> getProfile() async {
+    var localUser = await _profileLocalDataSource.getCachedUser();
+   
+    if (localUser != null) {
+      return ApiResult.success(localUser.toDomain());
+    } else {
+      final result = await _profileRemoteDataSource.getProfile();
+      return result.when(
+        success: (value) async {
+          final userData = value.userData?.firstOrNull;
+          if (userData != null) {
+            await _profileLocalDataSource.cacheUser(userData);
+            return ApiResult.success(userData.toDomain());
+          } else {
+            return ApiResult.failure(ErrorHandler.handle(ApiErrors.noContent));
+          }
+        },
+        failure: (error) {
+          return ApiResult.failure(ErrorHandler.handle(error));
+        },
       );
-      final response = await _apiService.getProfile("Bearer $token");
-
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
     }
   }
 }

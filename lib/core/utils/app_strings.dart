@@ -84,8 +84,20 @@ class AppStrings {
   static const String security = "Security";
   static const String language = "Language";
   static const String logout = "Logout";
-  static const String logoutConfirmationMessage ="Are you sure you want to logout?" ;
+  static const String logoutConfirmationMessage =
+      "Are you sure you want to logout?";
 
+  //home
+  static const String hwAreU2Day = " How Are you today ?";
+  static const String bookNearesrDoctor =
+      "Book and \n schedule with \n nearest doctor";
+  static const String findNearby = "Find nearby";
+
+  static const String docSpeciality = "Doctor Spectiality";
+  static const String recomendedDoc = "Recommended Doctor";
+  static const String seeAll = "See All";
+  static const String hi = "Hi";
+  static const String docViewsHint = "4.8 | 2533 views";
   // api errors messages
   static const String badRequestError =
       "Something went wrong. Please try again.";

@@ -1,5 +1,5 @@
 import 'package:clean_arch_app/core/theming/colors.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,7 +33,9 @@ class AppTextButton extends StatelessWidget {
       style: ButtonStyle(
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? AppDimensions.radius_16),
+            borderRadius: BorderRadius.circular(
+              borderRadius ?? AppDimensions.radius_16,
+            ),
           ),
         ),
         backgroundColor: WidgetStatePropertyAll(
@@ -45,8 +47,12 @@ class AppTextButton extends StatelessWidget {
             vertical: verticalPadding?.h ?? AppDimensions.height_14,
           ),
         ),
+        // change width according to text lenght
         fixedSize: WidgetStateProperty.all(
-          Size(buttonWidth?.w ?? double.maxFinite, buttonHeight?.h ?? AppDimensions.height_50),
+          Size(
+            buttonWidth?.w ?? double.maxFinite,
+            buttonHeight?.h ?? AppDimensions.height_50,
+          ),
         ),
       ),
 

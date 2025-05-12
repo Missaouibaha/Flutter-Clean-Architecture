@@ -1,5 +1,5 @@
 import 'package:clean_arch_app/core/theming/styles.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:flutter/material.dart';
 
 class DividerWithText extends StatelessWidget {

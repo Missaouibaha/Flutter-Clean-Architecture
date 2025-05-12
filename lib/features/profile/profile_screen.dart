@@ -3,8 +3,8 @@ import 'package:clean_arch_app/core/helper/spacing.dart';
 import 'package:clean_arch_app/core/routing/routes.dart';
 import 'package:clean_arch_app/core/theming/colors.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
-import 'package:clean_arch_app/core/utils/app_assets.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_assets.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:clean_arch_app/features/profile/presentation/widgets/profile_bloc_listener.dart';
@@ -42,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: ColorManager.transparent,
         actions: [
           Padding(
-            padding: EdgeInsets.all(AppDimensions.paddingHorizontal_8),
+            padding: EdgeInsets.all(AppDimensions.verticalPadding_8),
             child: GestureDetector(
               onTap: () {
                 context.pushNamed(Routes.settingScreen);
@@ -64,7 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: AppDimensions.paddingHorizontal_5,
+            horizontal: AppDimensions.verticalPadding_5,
           ),
           child: Column(
             children: [
@@ -94,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           verticalSpace(AppDimensions.height_15),
                           Padding(
                             padding: EdgeInsets.symmetric(
-                              horizontal: AppDimensions.paddingHorizontal_25,
+                              horizontal: AppDimensions.verticalPadding_25,
                             ),
                             child: Container(
                               width: double.maxFinite,
