@@ -1,9 +1,27 @@
 import 'package:clean_arch_app/core/helper/local/shared_preferences_helper.dart';
 import 'package:clean_arch_app/core/networking/api_service.dart';
+import 'package:clean_arch_app/core/services/hive_service.dart';
+import 'package:clean_arch_app/features/home/data/datasources/local/home_local_data_source.dart';
+import 'package:clean_arch_app/features/home/data/datasources/local/home_local_data_source_impl.dart';
+import 'package:clean_arch_app/features/home/data/datasources/remote/home_remote_data_source.dart';
+import 'package:clean_arch_app/features/home/data/datasources/remote/home_remote_data_source_impl.dart';
+import 'package:clean_arch_app/features/home/data/repository/home_repository_implmentation.dart';
+import 'package:clean_arch_app/features/home/domain/repository/home_repository.dart';
+import 'package:clean_arch_app/features/home/domain/usecases/home_use_case.dart';
+import 'package:clean_arch_app/features/home/domain/usecases/user_use_case.dart';
+import 'package:clean_arch_app/features/home/presentation/cubit/home_cubit.dart';
+import 'package:clean_arch_app/features/login/data/datasources/local/login_local_data_source.dart';
+import 'package:clean_arch_app/features/login/data/datasources/local/login_local_data_source_impl.dart';
+import 'package:clean_arch_app/features/login/data/datasources/remote/login_remote_data_source.dart';
+import 'package:clean_arch_app/features/login/data/datasources/remote/login_remote_data_source_impl.dart';
 import 'package:clean_arch_app/features/login/data/repository/login_repository_implementation.dart';
 import 'package:clean_arch_app/features/login/domain/repository/login_repository.dart';
 import 'package:clean_arch_app/features/login/domain/usecases/login_use_case.dart';
 import 'package:clean_arch_app/features/login/presentation/cubit/login_cubit.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/local/profile_local_data_source.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/local/profile_local_data_source_implmentation.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/remote/profile_remote_data_source.dart';
+import 'package:clean_arch_app/features/profile/data/datasources/remote/profile_remote_data_source_impl.dart';
 import 'package:clean_arch_app/features/profile/data/repository/profile_repository_implementation.dart';
 import 'package:clean_arch_app/features/profile/domain/repository/profile_repository.dart';
 import 'package:clean_arch_app/features/profile/domain/usecases/get_profile_use_case.dart';
@@ -12,6 +30,10 @@ import 'package:clean_arch_app/features/setting/data/repository/setting_reposito
 import 'package:clean_arch_app/features/setting/domain/repository/setting_repository.dart';
 import 'package:clean_arch_app/features/setting/domain/usecases/setting_use_case.dart';
 import 'package:clean_arch_app/features/setting/presentation/cubit/setting_cubit.dart';
+import 'package:clean_arch_app/features/signup/data/local/signup_local_data_source.dart';
+import 'package:clean_arch_app/features/signup/data/local/signup_local_data_source_impl.dart';
+import 'package:clean_arch_app/features/signup/data/remote/signup_remote_data_source.dart';
+import 'package:clean_arch_app/features/signup/data/remote/signup_remote_data_source_impl.dart';
 import 'package:clean_arch_app/features/signup/data/repository/sign_up_repository_imp.dart';
 import 'package:clean_arch_app/features/signup/domain/repositpry/sign_up_repository.dart';
 import 'package:clean_arch_app/features/signup/domain/usecases/sign_up_use_case.dart';
@@ -41,10 +63,13 @@ Future<void> setUpGetIt() async {
   FlutterSecureStorage flutterSecureStorage = await FlutterSecureStorage();
   getIt.registerLazySingleton<FlutterSecureStorage>(() => flutterSecureStorage);
 
-  // SharedPreferences Helper byinject sharedpref and secure storage
+  // SharedPreferences Helper by inject sharedpref and secure storage
   getIt.registerLazySingleton<SharedPreferencesHelper>(
     () => SharedPreferencesHelper(getIt(), getIt()),
   );
+
+  // hive by inject hivestorage
+  getIt.registerLazySingleton<HiveService>(() => HiveService());
 
   //initApiService
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
@@ -59,20 +84,39 @@ Future<void> setUpGetIt() async {
   getIt.registerLazySingleton<SplashCubit>(() => SplashCubit(getIt()));
 
   //login
+  getIt.registerLazySingleton<LoginLocalDataSource>(
+    () => LoginLocalDataSourceImpl(getIt()),
+  );
+  getIt.registerLazySingleton<LoginRemoteDataSource>(
+    () => LoginRemoteDataSourceImpl(getIt()),
+  );
+
   getIt.registerLazySingleton<LoginRepository>(
-    () => LoginRepositoryImplementation(getIt(), getIt()),
+    () => LoginRepositoryImplementation(getIt(), getIt(), getIt()),
   );
   getIt.registerLazySingleton<LoginUseCase>(() => LoginUseCase(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
   //signup
+  getIt.registerLazySingleton<SignupLocalDataSource>(
+    () => SignupLocalDataSourceImpl(getIt()),
+  );
+  getIt.registerLazySingleton<SignupRemoteDataSource>(
+    () => SignupRemoteDataSourceImpl(getIt()),
+  );
   getIt.registerLazySingleton<SignUpRepository>(
-    () => SignUpRepositoryImp(getIt(), getIt()),
+    () => SignUpRepositoryImp(getIt(), getIt(), getIt()),
   );
   getIt.registerLazySingleton<SignUpUseCase>(() => SignUpUseCase(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
 
   //profile
+  getIt.registerLazySingleton<ProfileLocalDataSource>(
+    () => ProfileLocalDataSourceImplmentation(getIt()),
+  );
+  getIt.registerLazySingleton<ProfileRemoteDataSource>(
+    () => ProfileRemoteDataSourceImpl(getIt(), getIt()),
+  );
   getIt.registerLazySingleton<ProfileRepository>(
     () => ProfileRepositoryImplementation(getIt(), getIt()),
   );
@@ -83,8 +127,24 @@ Future<void> setUpGetIt() async {
 
   //setting
   getIt.registerLazySingleton<SettingRepository>(
-    () => SettingRepositoryImplementation(getIt()),
+    () => SettingRepositoryImplementation(getIt(),getIt()),
   );
   getIt.registerLazySingleton<SettingUseCase>(() => SettingUseCase(getIt()));
   getIt.registerFactory<SettingCubit>(() => SettingCubit(getIt()));
+
+  //home
+
+  getIt.registerLazySingleton<HomeLocalDataSource>(
+    () => HomeLocalDataSourceImpl(getIt()),
+  );
+  getIt.registerLazySingleton<HomeRemoteDataSource>(
+    () => HomeRemoteDataSourceImpl(getIt(), getIt()),
+  );
+  getIt.registerLazySingleton<HomeRepository>(
+    () => HomeRepositoryImplmentation(getIt(), getIt()),
+  );
+  getIt.registerLazySingleton<HomeUseCase>(() => HomeUseCase(getIt()));
+  getIt.registerLazySingleton<UserUseCase>(() => UserUseCase(getIt()));
+
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt(), getIt()));
 }

@@ -25,7 +25,7 @@ class SignUpBlocListener extends StatelessWidget {
           loadingSignUp: () {
             LoadingIndicator.show(context);
           },
-          successSignUp: (data) {
+          successSignUp: (isRegistred) {
             LoadingIndicator.hide(context);
             context.pushNamedAndRemoveUntil(
               Routes.mainScreen,
@@ -34,7 +34,6 @@ class SignUpBlocListener extends StatelessWidget {
           },
           errorSignUp: (error) {
             LoadingIndicator.hide(context);
-
             ErrorDialog.show(context, error);
           },
           genderValidationError: () {

@@ -1,6 +1,6 @@
 import 'package:clean_arch_app/core/theming/colors.dart';
-import 'package:clean_arch_app/core/utils/app_assets.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_assets.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

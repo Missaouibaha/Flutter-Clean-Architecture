@@ -11,7 +11,7 @@ class SettingCubit extends Cubit<SettingState> {
     emit(SettingState.loading());
     final result = await settingUseCase.call();
     result.when(
-      success: (data) => emit(SettingState.success()),
+      success: (_) => emit(SettingState.success()),
 
       failure:
           (error) => emit(

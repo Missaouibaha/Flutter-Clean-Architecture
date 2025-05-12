@@ -25,4 +25,8 @@ class AppAssets {
   static const iconSecurity = 'assets/images/icon_lock.png';
   static const iconLanguage = 'assets/images/icon_language.png';
   static const iconLogout = 'assets/images/icon_logout.png';
+
+  //home
+  static const docImage = 'assets/images/img_doc.png';
+  static const iconCardioSpec = 'assets/images/icon_cardiologist_.png';
 }

@@ -15,7 +15,7 @@ class SignUpUseCase {
     String confirmPassword,
     String gender,
   ) async {
-    final result = await signUpRepository.signUp(
+    return await signUpRepository.signUp(
       User(
         name,
         email,
@@ -24,10 +24,6 @@ class SignUpUseCase {
         confirmPassword,
         Gender.values.firstWhere((it) => it.genderName == gender).genderValue,
       ),
-    );
-    return result.when(
-      success: (data) => ApiResult.success(true),
-      failure: (errorHandler) => ApiResult.failure(errorHandler),
     );
   }
 }

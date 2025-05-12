@@ -34,7 +34,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     );
 
     result.when(
-      success: (isRegistred) => emit(SignUpState.successSignUp(isRegistred)),
+      success: (response) => emit(SignUpState.successSignUp(response)),
       failure: (error) {
         String errorMessage = _extractErrorMessage(error.apiErrorModel);
         emit(SignUpState.errorSignUp(error: errorMessage));
@@ -46,7 +46,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     if (errorResponse.errors != null) {
       var firstError = errorResponse.errors!.values.first;
       if (firstError is List && firstError.isNotEmpty) {
-        return firstError.first.toString(); 
+        return firstError.first.toString();
       }
     }
     return errorResponse.message ?? AppStrings.unknownError;

@@ -1,7 +1,7 @@
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/helper/spacing.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/app_text_button.dart';
 import 'package:clean_arch_app/core/widgets/divider_with_text.dart';

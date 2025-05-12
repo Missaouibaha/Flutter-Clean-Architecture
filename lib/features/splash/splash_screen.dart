@@ -1,4 +1,4 @@
-import 'package:clean_arch_app/core/utils/app_assets.dart';
+import 'package:clean_arch_app/core/theming/app_assets.dart';
 import 'package:clean_arch_app/features/splash/presentation/cubit/splash_cubit.dart';
 import 'package:clean_arch_app/features/splash/presentation/widget/splash_block_listener.dart';
 import 'package:flutter/material.dart';

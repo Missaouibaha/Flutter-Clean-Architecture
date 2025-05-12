@@ -1,7 +1,7 @@
 import 'package:clean_arch_app/core/theming/colors.dart';
 import 'package:clean_arch_app/core/theming/styles.dart';
-import 'package:clean_arch_app/core/utils/app_assets.dart';
-import 'package:clean_arch_app/core/utils/app_dimensions.dart';
+import 'package:clean_arch_app/core/theming/app_assets.dart';
+import 'package:clean_arch_app/core/theming/app_dimensions.dart';
 import 'package:clean_arch_app/core/utils/app_strings.dart';
 import 'package:clean_arch_app/core/widgets/custom_back_button.dart';
 import 'package:clean_arch_app/features/setting/presentation/cubit/setting_cubit.dart';
@@ -27,7 +27,7 @@ class SettingScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: AppDimensions.paddingHorizontal_5,
+            horizontal: AppDimensions.verticalPadding_5,
           ),
           child: Column(
             children: [

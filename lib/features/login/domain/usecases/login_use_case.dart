@@ -7,16 +7,6 @@ class LoginUseCase {
   LoginUseCase(this.loginRepository);
 
   Future<ApiResult<User>> call(String email, String password) async {
-    final result = await loginRepository.login(email, password);
-    return result.when(
-      success: (response) {
-        final user = User(
-          token: response.userData?.token ?? '',
-          name: response.userData?.name ?? '',
-        );
-        return ApiResult.success(user);
-      },
-      failure: (error) => ApiResult.failure(error),
-    );
+    return await loginRepository.login(email, password);
   }
 }
