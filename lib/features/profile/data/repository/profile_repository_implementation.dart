@@ -19,11 +19,12 @@ class ProfileRepositoryImplementation implements ProfileRepository {
   @override
   Future<ApiResult<User>> getProfile() async {
     var localUser = await _profileLocalDataSource.getCachedUser();
-   
+
     if (localUser != null) {
       return ApiResult.success(localUser.toDomain());
     } else {
-      final result = await _profileRemoteDataSource.getProfile();
+      final token = await _profileLocalDataSource.getToken();
+      final result = await _profileRemoteDataSource.getProfile(token);
       return result.when(
         success: (value) async {
           final userData = value.userData?.firstOrNull;

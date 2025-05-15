@@ -13,10 +13,11 @@ class SplashBlockListener extends StatelessWidget {
     return BlocListener<SplashCubit, SplashState>(
       listenWhen:
           (previous, current) =>
-              current is SuccessCheckStatus || current is FailureCheckStatus,
+              current is SuccessCheckConnection ||
+              current is FailureCheckConnection,
       listener: (context, state) {
         state.whenOrNull(
-          successCheckStatus: (isLoggedIn) {
+          successCheckConnection: (isLoggedIn) {
             if (isLoggedIn) {
               context.pushReplacementNamed(Routes.mainScreen);
             } else {
@@ -24,7 +25,7 @@ class SplashBlockListener extends StatelessWidget {
             }
           },
 
-          failureCheckStatus: (errro) {
+          failureCheckConnection: (errro) {
             showDialog(
               context: context,
               builder: (context) {

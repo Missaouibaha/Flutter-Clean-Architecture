@@ -12,12 +12,10 @@ import 'package:clean_arch_app/features/login/domain/repository/login_repository
 class LoginRepositoryImplementation implements LoginRepository {
   final LoginRemoteDataSource _remoteDataSource;
   final LoginLocalDataSource _localDataSource;
-  final SharedPreferencesHelper _sharedPreferencesHelper;
 
   LoginRepositoryImplementation(
     this._localDataSource,
     this._remoteDataSource,
-    this._sharedPreferencesHelper,
   );
 
   @override
@@ -30,14 +28,6 @@ class LoginRepositoryImplementation implements LoginRepository {
           final user = data.userData;
           if (user != null) {
             await _localDataSource.cacheUser(user);
-            await _sharedPreferencesHelper.setSecureString(
-              SharedPreferencesKeys.token,
-              user.token,
-            );
-            await _sharedPreferencesHelper.setData(
-              SharedPreferencesKeys.isConnected,
-              true,
-            );
             return ApiResult.success(user.toDomain());
           } else {
             return ApiResult.failure(ErrorHandler.handle(ApiErrors.noContent));

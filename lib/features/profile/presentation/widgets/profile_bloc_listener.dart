@@ -1,3 +1,4 @@
+import 'package:clean_arch_app/core/base/base_state.dart';
 import 'package:clean_arch_app/core/widgets/error_dialog.dart';
 import 'package:clean_arch_app/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:clean_arch_app/features/profile/presentation/cubit/profile_state.dart';

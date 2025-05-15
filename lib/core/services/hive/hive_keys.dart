@@ -3,6 +3,5 @@ class HiveKeys {
   static const user = 'user';
   static const localHomaDataBox = 'localHomaData';
   static const homaData = 'homaData';
-
   static const userProfileBox = 'userProfile';
 }

@@ -1,34 +1,27 @@
+import 'package:clean_arch_app/core/base/base_local_data_source.dart';
 import 'package:clean_arch_app/core/services/hive/hive_keys.dart';
-import 'package:clean_arch_app/core/services/hive_service.dart';
 import 'package:clean_arch_app/features/home/data/datasources/local/home_local_data_source.dart';
 import 'package:clean_arch_app/features/home/data/datasources/models/home_data.dart';
-import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local_login.dart';
+import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local.dart';
 
-class HomeLocalDataSourceImpl implements HomeLocalDataSource {
-  final HiveService _hiveService;
-  HomeLocalDataSourceImpl(this._hiveService);
+class HomeLocalDataSourceImpl extends BaseLocalDataSource
+    implements HomeLocalDataSource {
+  HomeLocalDataSourceImpl();
 
   @override
-  Future<UserLocalLogin?> getCachedUser() async {
-    return await _hiveService.openAndGet(
-      HiveKeys.connectedUserBox,
-      HiveKeys.user,
-    );
+  Future<UserLocal?> getCachedUser() async {
+    return await getCached(HiveKeys.connectedUserBox, HiveKeys.user);
   }
 
   @override
   Future<void> cacheHomeData(List<HomeData> homeData) async {
-    await _hiveService.openAndPut(
-      HiveKeys.localHomaDataBox,
-      HiveKeys.homaData,
-      homeData,
-    );
+    await cache(HiveKeys.localHomaDataBox, HiveKeys.homaData, homeData);
   }
 
   @override
   Future<List<HomeData>?> getCachedHomeData() async {
     try {
-      final data = await _hiveService.openAndGet<List<HomeData>>(
+      final data = await getCached<List<HomeData>>(
         HiveKeys.localHomaDataBox,
         HiveKeys.homaData,
       );
@@ -36,5 +29,10 @@ class HomeLocalDataSourceImpl implements HomeLocalDataSource {
     } catch (error) {
       return [];
     }
+  }
+
+  @override
+  Future<String> getToken() async {
+    return await getUserToken();
   }
 }

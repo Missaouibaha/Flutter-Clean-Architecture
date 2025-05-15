@@ -3,5 +3,6 @@ import 'package:clean_arch_app/features/profile/data/datasources/remote/models/u
 
 abstract class ProfileLocalDataSource {
   Future<void> cacheUser(UserData user);
-  Future<UserLocal?> getCachedUser();
+  Future<ProfileLocal?> getCachedUser();
+  Future<String> getToken();
 }

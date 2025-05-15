@@ -12,7 +12,9 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: BlocProvider(
-          create: (context) => context.read<SplashCubit>()..emitCheckStatus(),
+          create:
+              (context) =>
+                  context.read<SplashCubit>()..emitCheckConnectionStates(),
 
           child: Center(
             child: Column(

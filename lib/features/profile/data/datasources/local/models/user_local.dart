@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 part 'user_local.g.dart';
 
 @HiveType(typeId: 1)
-class UserLocal {
+class ProfileLocal {
   @HiveField(0)
   final String name;
   @HiveField(1)
@@ -13,7 +13,7 @@ class UserLocal {
   @HiveField(3)
   final String gender;
 
-  UserLocal({
+  ProfileLocal({
     required this.name,
     required this.email,
     required this.phone,
