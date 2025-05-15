@@ -115,4 +115,5 @@ screen/
 
 UI screens like login, sign-up, home, etc.
 
+add formatted README
 
