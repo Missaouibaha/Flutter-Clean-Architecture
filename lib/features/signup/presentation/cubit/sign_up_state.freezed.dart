@@ -12,8 +12,7 @@ part of 'sign_up_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignUpState<T> {
@@ -24,7 +23,8 @@ mixin _$SignUpState<T> {
     required TResult Function(T data) successSignUp,
     required TResult Function(String error) errorSignUp,
     required TResult Function() genderValidationError,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -32,7 +32,8 @@ mixin _$SignUpState<T> {
     TResult? Function(T data)? successSignUp,
     TResult? Function(String error)? errorSignUp,
     TResult? Function()? genderValidationError,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -41,7 +42,8 @@ mixin _$SignUpState<T> {
     TResult Function(String error)? errorSignUp,
     TResult Function()? genderValidationError,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
@@ -49,8 +51,9 @@ mixin _$SignUpState<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
-  }) => throw _privateConstructorUsedError;
+        genderValidationError,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
@@ -58,7 +61,8 @@ mixin _$SignUpState<T> {
     TResult? Function(SuccessSignUp<T> value)? successSignUp,
     TResult? Function(ErrorSignUp<T> value)? errorSignUp,
     TResult? Function(GenderValidationError<T> value)? genderValidationError,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
@@ -67,15 +71,15 @@ mixin _$SignUpState<T> {
     TResult Function(ErrorSignUp<T> value)? errorSignUp,
     TResult Function(GenderValidationError<T> value)? genderValidationError,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SignUpStateCopyWith<T, $Res> {
   factory $SignUpStateCopyWith(
-    SignUpState<T> value,
-    $Res Function(SignUpState<T>) then,
-  ) = _$SignUpStateCopyWithImpl<T, $Res, SignUpState<T>>;
+          SignUpState<T> value, $Res Function(SignUpState<T>) then) =
+      _$SignUpStateCopyWithImpl<T, $Res, SignUpState<T>>;
 }
 
 /// @nodoc
@@ -95,9 +99,8 @@ class _$SignUpStateCopyWithImpl<T, $Res, $Val extends SignUpState<T>>
 /// @nodoc
 abstract class _$$InitialImplCopyWith<T, $Res> {
   factory _$$InitialImplCopyWith(
-    _$InitialImpl<T> value,
-    $Res Function(_$InitialImpl<T>) then,
-  ) = __$$InitialImplCopyWithImpl<T, $Res>;
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -105,9 +108,8 @@ class __$$InitialImplCopyWithImpl<T, $Res>
     extends _$SignUpStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
     implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
-    _$InitialImpl<T> _value,
-    $Res Function(_$InitialImpl<T>) _then,
-  ) : super(_value, _then);
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
+      : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -180,7 +182,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
+        genderValidationError,
   }) {
     return initial(this);
   }
@@ -220,20 +222,18 @@ abstract class _Initial<T> implements SignUpState<T> {
 
 /// @nodoc
 abstract class _$$LoadingSignUpImplCopyWith<T, $Res> {
-  factory _$$LoadingSignUpImplCopyWith(
-    _$LoadingSignUpImpl<T> value,
-    $Res Function(_$LoadingSignUpImpl<T>) then,
-  ) = __$$LoadingSignUpImplCopyWithImpl<T, $Res>;
+  factory _$$LoadingSignUpImplCopyWith(_$LoadingSignUpImpl<T> value,
+          $Res Function(_$LoadingSignUpImpl<T>) then) =
+      __$$LoadingSignUpImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
 class __$$LoadingSignUpImplCopyWithImpl<T, $Res>
     extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingSignUpImpl<T>>
     implements _$$LoadingSignUpImplCopyWith<T, $Res> {
-  __$$LoadingSignUpImplCopyWithImpl(
-    _$LoadingSignUpImpl<T> _value,
-    $Res Function(_$LoadingSignUpImpl<T>) _then,
-  ) : super(_value, _then);
+  __$$LoadingSignUpImplCopyWithImpl(_$LoadingSignUpImpl<T> _value,
+      $Res Function(_$LoadingSignUpImpl<T>) _then)
+      : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -306,7 +306,7 @@ class _$LoadingSignUpImpl<T> implements LoadingSignUp<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
+        genderValidationError,
   }) {
     return loadingSignUp(this);
   }
@@ -346,10 +346,9 @@ abstract class LoadingSignUp<T> implements SignUpState<T> {
 
 /// @nodoc
 abstract class _$$SuccessSignUpImplCopyWith<T, $Res> {
-  factory _$$SuccessSignUpImplCopyWith(
-    _$SuccessSignUpImpl<T> value,
-    $Res Function(_$SuccessSignUpImpl<T>) then,
-  ) = __$$SuccessSignUpImplCopyWithImpl<T, $Res>;
+  factory _$$SuccessSignUpImplCopyWith(_$SuccessSignUpImpl<T> value,
+          $Res Function(_$SuccessSignUpImpl<T>) then) =
+      __$$SuccessSignUpImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
@@ -358,24 +357,23 @@ abstract class _$$SuccessSignUpImplCopyWith<T, $Res> {
 class __$$SuccessSignUpImplCopyWithImpl<T, $Res>
     extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessSignUpImpl<T>>
     implements _$$SuccessSignUpImplCopyWith<T, $Res> {
-  __$$SuccessSignUpImplCopyWithImpl(
-    _$SuccessSignUpImpl<T> _value,
-    $Res Function(_$SuccessSignUpImpl<T>) _then,
-  ) : super(_value, _then);
+  __$$SuccessSignUpImplCopyWithImpl(_$SuccessSignUpImpl<T> _value,
+      $Res Function(_$SuccessSignUpImpl<T>) _then)
+      : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? data = freezed}) {
-    return _then(
-      _$SuccessSignUpImpl<T>(
-        freezed == data
-            ? _value.data
-            : data // ignore: cast_nullable_to_non_nullable
-                as T,
-      ),
-    );
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessSignUpImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
   }
 }
 
@@ -411,9 +409,7 @@ class _$SuccessSignUpImpl<T> implements SuccessSignUp<T> {
   @pragma('vm:prefer-inline')
   _$$SuccessSignUpImplCopyWith<T, _$SuccessSignUpImpl<T>> get copyWith =>
       __$$SuccessSignUpImplCopyWithImpl<T, _$SuccessSignUpImpl<T>>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -463,7 +459,7 @@ class _$SuccessSignUpImpl<T> implements SuccessSignUp<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
+        genderValidationError,
   }) {
     return successSignUp(this);
   }
@@ -511,10 +507,9 @@ abstract class SuccessSignUp<T> implements SignUpState<T> {
 
 /// @nodoc
 abstract class _$$ErrorSignUpImplCopyWith<T, $Res> {
-  factory _$$ErrorSignUpImplCopyWith(
-    _$ErrorSignUpImpl<T> value,
-    $Res Function(_$ErrorSignUpImpl<T>) then,
-  ) = __$$ErrorSignUpImplCopyWithImpl<T, $Res>;
+  factory _$$ErrorSignUpImplCopyWith(_$ErrorSignUpImpl<T> value,
+          $Res Function(_$ErrorSignUpImpl<T>) then) =
+      __$$ErrorSignUpImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({String error});
 }
@@ -524,24 +519,22 @@ class __$$ErrorSignUpImplCopyWithImpl<T, $Res>
     extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorSignUpImpl<T>>
     implements _$$ErrorSignUpImplCopyWith<T, $Res> {
   __$$ErrorSignUpImplCopyWithImpl(
-    _$ErrorSignUpImpl<T> _value,
-    $Res Function(_$ErrorSignUpImpl<T>) _then,
-  ) : super(_value, _then);
+      _$ErrorSignUpImpl<T> _value, $Res Function(_$ErrorSignUpImpl<T>) _then)
+      : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? error = null}) {
-    return _then(
-      _$ErrorSignUpImpl<T>(
-        error:
-            null == error
-                ? _value.error
-                : error // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorSignUpImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -576,9 +569,7 @@ class _$ErrorSignUpImpl<T> implements ErrorSignUp<T> {
   @pragma('vm:prefer-inline')
   _$$ErrorSignUpImplCopyWith<T, _$ErrorSignUpImpl<T>> get copyWith =>
       __$$ErrorSignUpImplCopyWithImpl<T, _$ErrorSignUpImpl<T>>(
-        this,
-        _$identity,
-      );
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -628,7 +619,7 @@ class _$ErrorSignUpImpl<T> implements ErrorSignUp<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
+        genderValidationError,
   }) {
     return errorSignUp(this);
   }
@@ -678,9 +669,9 @@ abstract class ErrorSignUp<T> implements SignUpState<T> {
 /// @nodoc
 abstract class _$$GenderValidationErrorImplCopyWith<T, $Res> {
   factory _$$GenderValidationErrorImplCopyWith(
-    _$GenderValidationErrorImpl<T> value,
-    $Res Function(_$GenderValidationErrorImpl<T>) then,
-  ) = __$$GenderValidationErrorImplCopyWithImpl<T, $Res>;
+          _$GenderValidationErrorImpl<T> value,
+          $Res Function(_$GenderValidationErrorImpl<T>) then) =
+      __$$GenderValidationErrorImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -688,9 +679,9 @@ class __$$GenderValidationErrorImplCopyWithImpl<T, $Res>
     extends _$SignUpStateCopyWithImpl<T, $Res, _$GenderValidationErrorImpl<T>>
     implements _$$GenderValidationErrorImplCopyWith<T, $Res> {
   __$$GenderValidationErrorImplCopyWithImpl(
-    _$GenderValidationErrorImpl<T> _value,
-    $Res Function(_$GenderValidationErrorImpl<T>) _then,
-  ) : super(_value, _then);
+      _$GenderValidationErrorImpl<T> _value,
+      $Res Function(_$GenderValidationErrorImpl<T>) _then)
+      : super(_value, _then);
 
   /// Create a copy of SignUpState
   /// with the given fields replaced by the non-null parameter values.
@@ -764,7 +755,7 @@ class _$GenderValidationErrorImpl<T> implements GenderValidationError<T> {
     required TResult Function(SuccessSignUp<T> value) successSignUp,
     required TResult Function(ErrorSignUp<T> value) errorSignUp,
     required TResult Function(GenderValidationError<T> value)
-    genderValidationError,
+        genderValidationError,
   }) {
     return genderValidationError(this);
   }

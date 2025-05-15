@@ -3,8 +3,8 @@ import 'package:clean_arch_app/features/profile/data/datasources/remote/models/u
 import 'package:clean_arch_app/features/profile/domain/entities/user.dart';
 
 extension UserDataMapper on UserData {
-  UserLocal toLocal() {
-    return UserLocal(
+  ProfileLocal toLocal() {
+    return ProfileLocal(
       name: name ?? '',
       email: email ?? '',
       phone: phone ?? '',
@@ -22,7 +22,7 @@ extension UserDataMapper on UserData {
   }
 }
 
-extension UserLocalMapper on UserLocal {
+extension UserLocalMapper on ProfileLocal {
   User toDomain() =>
       User(name: name, email: email, phone: phone, gender: gender);
 }

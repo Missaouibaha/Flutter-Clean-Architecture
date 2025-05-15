@@ -24,7 +24,8 @@ class HomeRepositoryImplmentation implements HomeRepository {
         localHomeData.map((localData) => localData.toDomain()).toList(),
       );
     } else {
-      final result = await _remoteDataSource.getHomeData();
+      final token = await _localDataSource.getToken();
+      final result = await _remoteDataSource.getHomeData(token);
       return result.when(
         success: (data) async {
           final homeData = data.homeData;

@@ -1,5 +1,5 @@
-import 'package:clean_arch_app/features/signup/data/local/models/user_local_register_data.dart';
+import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local.dart';
 
 abstract class SignupLocalDataSource {
-  Future<void> cacheUser(UserLocalRegisterData user);
+  Future<void> cacheUser(UserLocal user);
 }

@@ -4,7 +4,7 @@ import 'package:clean_arch_app/features/home/data/datasources/models/doctor_data
 import 'package:clean_arch_app/features/home/data/datasources/models/governorate.dart';
 import 'package:clean_arch_app/features/home/data/datasources/models/home_data.dart';
 import 'package:clean_arch_app/features/home/data/datasources/models/specialization.dart';
-import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local_login.dart';
+import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local.dart';
 import 'package:clean_arch_app/features/profile/data/datasources/local/models/user_local.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -19,7 +19,7 @@ class HiveService {
       await Hive.initFlutter();
     }
     Hive.registerAdapter(UserLocalLoginAdapter());
-    Hive.registerAdapter(UserLocalAdapter());
+    Hive.registerAdapter(ProfileLocalAdapter());
     Hive.registerAdapter(HomeDataAdapter());
     Hive.registerAdapter(DoctorDataAdapter());
     Hive.registerAdapter(CityAdapter());
@@ -94,12 +94,12 @@ class HiveService {
       await Hive.box<List<HomeData>>(HiveKeys.localHomaDataBox).close();
     }
     if (Hive.isBoxOpen(HiveKeys.userProfileBox)) {
-      await Hive.box<UserLocal>(HiveKeys.userProfileBox).clear();
-      await Hive.box<UserLocal>(HiveKeys.userProfileBox).close();
+      await Hive.box<ProfileLocal>(HiveKeys.userProfileBox).clear();
+      await Hive.box<ProfileLocal>(HiveKeys.userProfileBox).close();
     }
     if (Hive.isBoxOpen(HiveKeys.connectedUserBox)) {
-      await Hive.box<UserLocalLogin>(HiveKeys.connectedUserBox).clear();
-      await Hive.box<UserLocalLogin>(HiveKeys.connectedUserBox).close();
+      await Hive.box<UserLocal>(HiveKeys.connectedUserBox).clear();
+      await Hive.box<UserLocal>(HiveKeys.connectedUserBox).close();
     }
 
     await Hive.close();

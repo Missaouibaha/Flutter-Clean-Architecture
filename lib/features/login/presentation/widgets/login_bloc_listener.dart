@@ -1,3 +1,4 @@
+import 'package:clean_arch_app/core/base/base_state.dart';
 import 'package:clean_arch_app/core/helper/extensions.dart';
 import 'package:clean_arch_app/core/routing/routes.dart';
 import 'package:clean_arch_app/core/widgets/error_dialog.dart';

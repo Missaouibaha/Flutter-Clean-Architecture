@@ -48,3 +48,44 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+# ================================
+# Flutter/Dart Specific Ignored Files
+# ================================
+
+# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+
+# VS Code
+.vscode/
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+*.keystore
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner.xcworkspace/
+ios/Pods/
+ios/.symlinks/
+ios/Podfile.lock
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata
+
+# Others
+*.lock
+pubspec.lock
+*.log
