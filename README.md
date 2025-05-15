@@ -1,8 +1,6 @@
 ## 🧠 Overview
 
 
-![Clean Architecture](./cleanArch.JPG)
-
 This project follows **Clean Architecture** principles with a **modular folder structure**, ensuring clear separation of concerns, testability, and scalability.
 
 Clean Architecture divides the code into three main layers:
@@ -31,6 +29,9 @@ The `core` directory contains shared resources and base configurations used acro
 * **Widgets**: Reusable UI components (custom fields, buttons, dialogs, etc.)
 
 ---
+
+![Clean Architecture](./cleanArch.JPG)
+
 
 ### 🔹 Features Layer
 
