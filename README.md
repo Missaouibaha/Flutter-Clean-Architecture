@@ -1,3 +1,8 @@
+ 
+# clean_arch_app
+
+A new Flutter project.
+=======
 # 🧠 Overview
 
 This project follows **Clean Architecture** principles with a **modular folder structure**, ensuring clear separation of concerns, testability, and scalability.
@@ -108,4 +113,4 @@ Handles all UI logic and rendering:
 
 - **`screen/`**
   - UI screens like login, sign-up, home, etc.
-
+ 
