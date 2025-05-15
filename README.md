@@ -11,6 +11,7 @@ Clean Architecture divides the code into three main layers:
 
 Each layer has a specific responsibility. The modular design enables reusable core logic and feature-based isolation, making the project easy to navigate and maintain as it grows.
 
+
 ---
 
 ## 📁 Project Structure
@@ -29,9 +30,9 @@ The `core` directory contains shared resources and base configurations used acro
 * **Widgets**: Reusable UI components (custom fields, buttons, dialogs, etc.)
 
 ---
-
-![Clean Architecture](./cleanArch.JPG)
-
+<p align="center">
+  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" />
+</p>
 
 ### 🔹 Features Layer
 
