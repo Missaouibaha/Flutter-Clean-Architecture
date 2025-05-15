@@ -31,7 +31,7 @@ The `core` directory contains shared resources and base configurations used acro
 
 ---
 <p align="center">
-  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" />
+  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" height="800" />
 </p>
 
 ### 🔹 Features Layer
