@@ -118,3 +118,5 @@ Here are the main packages used in this project and what they do:
 * **`dartz`**: Functional programming tools and data types.
 
 ---
+<video src='https://www.youtube.com/shorts/f5PM5OE-jo8' width=180/>
+
