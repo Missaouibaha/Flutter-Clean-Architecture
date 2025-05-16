@@ -18,6 +18,7 @@ Each layer has a specific responsibility. The modular design enables reusable co
 
 ### 🔹 Core Layer (Shared Modules)
 
+At the heart of the architecture is the core layer — a centralized place for reusable components and app-wide configurations.
 The `core` directory contains shared resources and base configurations used across the entire app, including:
 
 * **Base classes**: `BaseLocalDataSource`, `BaseRemoteDataSource`, `BaseState<T>`
@@ -30,9 +31,7 @@ The `core` directory contains shared resources and base configurations used acro
 * **Widgets**: Reusable UI components (custom fields, buttons, dialogs, etc.)
 
 ---
-<p align="center">
-  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" height="800" />
-</p>
+
 
 ### 🔹 Features Layer
 
@@ -65,6 +64,9 @@ User interface layer:
 * `widgets/`: Feature-level reusable widgets
 * `screen/`: Screens like login, sign-up, home, etc.
 
+<p align="center">
+  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" height="800" />
+</p>
 ---
 
 ## 🎓 Technologies & Dependencies
