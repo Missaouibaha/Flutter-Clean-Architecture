@@ -15,22 +15,17 @@ jobs:
         run: |
           curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_3.22.0-stable.zip
           unzip flutter_macos_3.22.0-stable.zip
-          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
-          export PATH="$GITHUB_WORKSPACE/flutter/bin:$PATH"
-          flutter precache
+
+      - name: Set Flutter in PATH
+        run: echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
 
       - name: Confirm Dart & Flutter versions
         run: |
-          export PATH="$GITHUB_WORKSPACE/flutter/bin:$PATH"
           flutter --version
           dart --version
 
       - name: Install dependencies
-        run: |
-          export PATH="$GITHUB_WORKSPACE/flutter/bin:$PATH"
-          flutter pub get
+        run: flutter pub get
 
       - name: Build IPA (or APK)
-        run: |
-          export PATH="$GITHUB_WORKSPACE/flutter/bin:$PATH"
-          flutter build ipa --release
+        run: flutter build ipa --release
