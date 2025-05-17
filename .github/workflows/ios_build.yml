@@ -8,13 +8,20 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+
+      - name: Remove cached Flutter SDK
+        run: rm -rf $HOME/.flutter
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
+
+      - name: Check Flutter and Dart versions
+        run: |
+          flutter --version
+          dart --version
 
       - name: Install dependencies
         run: flutter pub get
@@ -24,9 +31,3 @@ jobs:
 
       - name: Build IPA
         run: flutter build ipa --release
-
-      - name: Zip IPA manually
-        run: |
-          cd build/ios/ipa
-          zip -r ios-release.zip *.ipa
-          ls -lh
