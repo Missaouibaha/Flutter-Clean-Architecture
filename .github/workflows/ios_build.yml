@@ -8,17 +8,16 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Remove cached Flutter SDK
-        run: rm -rf $HOME/.flutter
+      - name: Download Flutter 3.22.0 manually
+        run: |
+          curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_3.22.0-stable.zip
+          unzip flutter_macos_3.22.0-stable.zip
+          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
 
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.22.0'
-
-      - name: Check Flutter and Dart versions
+      - name: Check versions
         run: |
           flutter --version
           dart --version
@@ -26,8 +25,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Generate code (build_runner)
+      - name: Generate code
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Build IPA
         run: flutter build ipa --release
+ 
