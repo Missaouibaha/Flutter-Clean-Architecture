@@ -3,10 +3,6 @@ name: Build iOS IPA
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-  packages: write
-
 jobs:
   build:
     runs-on: macos-latest
@@ -29,8 +25,8 @@ jobs:
       - name: Build IPA
         run: flutter build ipa --release
 
-      - name: Upload IPA artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ios-release
-          path: build/ios/ipa/*.ipa
+      - name: Zip IPA manually
+        run: |
+          cd build/ios/ipa
+          zip -r ios-release.zip *.ipa
+          ls -lh
