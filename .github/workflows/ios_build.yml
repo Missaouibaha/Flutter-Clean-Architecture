@@ -1,7 +1,7 @@
 name: Build iOS IPA
 
 on:
-  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         run: flutter build ipa --release
 
       - name: Upload IPA artifact
-        uses: actions/upload-artifact@8d3c1d0a5690c5b87e31485cc83ef84e9842e3a0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: ios-release
           path: build/ios/ipa/*.ipa
