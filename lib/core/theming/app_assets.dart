@@ -29,4 +29,6 @@ class AppAssets {
   //home
   static const docImage = 'assets/images/img_doc.png';
   static const iconCardioSpec = 'assets/images/icon_cardiologist_.png';
+
+  static const iconMarker = 'assets/images/ic_marker_location.png';
 }

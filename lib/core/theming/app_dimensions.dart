@@ -18,8 +18,8 @@ class AppDimensions {
   static double height_50 = 50.h;
   static double height_60 = 60.h;
   static double height_70 = 70.h;
-  static  double height_100 = 100.h;
-
+  static double height_80 = 80.h;
+  static double height_100 = 100.h;
   static double height_120 = 120.h;
   static double height_130 = 130.h;
   static double height_140 = 140.h;
@@ -56,6 +56,8 @@ class AppDimensions {
   static double padding_8 = 8.w;
   static double padding_10 = 10.w;
   static double padding_12 = 12.w;
+  static double padding_15 = 15.w;
+  static double padding_18 = 18.w;
   static double padding_20 = 20.w;
   static double padding_25 = 25.w;
   static double verticalPadding_2 = 2.h;
@@ -92,4 +94,12 @@ class AppDimensions {
 
   // Misc
   static double profileImageOffset_60 = -60.h;
+
+  // elevation
+  static double elevation_1 = 1;
+  static double elevation_2 = 2;
+  static double elevation_3 = 3;
+  static double elevation_4 = 4;
+  static double elevation_5 = 5;
+  static double elevation_6 = 6;
 }
