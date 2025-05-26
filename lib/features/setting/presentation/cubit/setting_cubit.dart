@@ -8,6 +8,8 @@ class SettingCubit extends Cubit<SettingState> {
   SettingCubit(this.settingUseCase) : super(SettingState.initial());
 
   void emitSettingLogoutStates() async {
+      print("🔥 emitSearchState called");
+
     emit(SettingState.loading());
     final result = await settingUseCase.call();
     result.when(

@@ -20,6 +20,7 @@ class SettingBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
+            
             LoadingIndicator.show(context);
           },
           success: (_) {

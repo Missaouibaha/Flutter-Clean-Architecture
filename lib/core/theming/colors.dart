@@ -26,4 +26,7 @@ class ColorManager {
   static const Color pink = Color.fromARGB(255, 226, 195, 216);
   static final Color shimmerBaseColor = Colors.grey[300]!;
   static final Color shimmerHighlightColor = Colors.grey[100]!;
+
+  /*                                 */
+  static final Color bgColorDoctorList = Color.fromARGB(95, 243, 241, 241);
 }

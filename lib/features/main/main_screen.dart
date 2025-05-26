@@ -8,7 +8,7 @@ import 'package:clean_arch_app/features/home/presentation/cubit/home_cubit.dart'
 import 'package:clean_arch_app/features/main/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:clean_arch_app/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:clean_arch_app/features/profile/profile_screen.dart';
-import 'package:clean_arch_app/features/search/cubit/search_cubit.dart';
+import 'package:clean_arch_app/features/search/presentation/cubit/search_cubit.dart';
 import 'package:clean_arch_app/features/search/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
