@@ -6,6 +6,11 @@ import 'package:clean_arch_app/features/home/data/datasources/models/home_data.d
 import 'package:clean_arch_app/features/home/data/datasources/models/specialization.dart';
 import 'package:clean_arch_app/features/login/data/datasources/local/models/user_local.dart';
 import 'package:clean_arch_app/features/profile/data/datasources/local/models/user_local.dart';
+import 'package:clean_arch_app/features/search/data/datasources/models/doctor_city.dart';
+import 'package:clean_arch_app/features/search/data/datasources/models/doctor_governorate.dart';
+import 'package:clean_arch_app/features/search/data/datasources/models/doctor_specialization.dart';
+import 'package:clean_arch_app/features/search/data/datasources/models/doctors_response.dart';
+import 'package:clean_arch_app/features/search/data/datasources/models/search_doctor_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
@@ -18,13 +23,19 @@ class HiveService {
     } else {
       await Hive.initFlutter();
     }
-    Hive.registerAdapter(UserLocalLoginAdapter());
+    Hive.registerAdapter(UserLocalAdapter());
     Hive.registerAdapter(ProfileLocalAdapter());
     Hive.registerAdapter(HomeDataAdapter());
     Hive.registerAdapter(DoctorDataAdapter());
     Hive.registerAdapter(CityAdapter());
     Hive.registerAdapter(SpecializationAdapter());
     Hive.registerAdapter(GovernorateAdapter());
+    Hive.registerAdapter(SearchDoctorDataAdapter());
+    Hive.registerAdapter(DoctorSpecializationAdapter());
+    Hive.registerAdapter(DoctorsResponseAdapter());
+    Hive.registerAdapter(DoctorCityAdapter());
+    Hive.registerAdapter(DoctorGovernorateAdapter());
+
   }
 
   Future<Box<T>> openBox<T>(String name) async {

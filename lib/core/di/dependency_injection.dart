@@ -29,6 +29,14 @@ import 'package:clean_arch_app/features/profile/data/repository/profile_reposito
 import 'package:clean_arch_app/features/profile/domain/repository/profile_repository.dart';
 import 'package:clean_arch_app/features/profile/domain/usecases/get_profile_use_case.dart';
 import 'package:clean_arch_app/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:clean_arch_app/features/search/data/datasources/local/local_data_source.dart';
+import 'package:clean_arch_app/features/search/data/datasources/local/local_data_source_impl.dart';
+import 'package:clean_arch_app/features/search/data/datasources/remote/remote_data_source.dart';
+import 'package:clean_arch_app/features/search/data/datasources/remote/remote_data_source_impl.dart';
+import 'package:clean_arch_app/features/search/data/repository/search_repository_impl.dart';
+import 'package:clean_arch_app/features/search/domain/repository/search_repository.dart';
+import 'package:clean_arch_app/features/search/domain/usecases/search_use_case.dart';
+import 'package:clean_arch_app/features/search/presentation/cubit/search_cubit.dart';
 import 'package:clean_arch_app/features/setting/data/datasources/local/settings_local_data_source.dart';
 import 'package:clean_arch_app/features/setting/data/datasources/local/settings_local_data_source_impl.dart';
 import 'package:clean_arch_app/features/setting/data/datasources/remote/setting_remote_data_source.dart';
@@ -179,4 +187,15 @@ Future<void> setUpGetIt() async {
   getIt.registerLazySingleton<UserUseCase>(() => UserUseCase(getIt()));
 
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt(), getIt()));
+
+  //search
+  getIt.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
+  getIt.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl());
+
+  getIt.registerLazySingleton<SearchRepository>(
+    () => SearchRepositoryImpl(getIt(), getIt()),
+  );
+  getIt.registerLazySingleton<SearchUseCase>(() => SearchUseCase(getIt()));
+
+  getIt.registerFactory<SearchCubit>(() => SearchCubit(getIt()));
 }

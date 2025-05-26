@@ -22,5 +22,8 @@
   <string>1.0</string>
   <key>MinimumOSVersion</key>
   <string>12.0</string>
+  <key>MBXAccessToken</key>
+<string>pk.eyJ1IjoiYmFoYWVkZGluIiwiYSI6ImNtYjNpbm8zajA3czEyanF1ODdtenN6Nm8ifQ.KD_iKjjV5BbHLhQeCFxgcQ</string>
+
 </dict>
 </plist>

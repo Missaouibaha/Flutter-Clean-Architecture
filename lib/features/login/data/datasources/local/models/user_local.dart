@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-part 'user_local_login.g.dart';
+part 'user_local.g.dart';
 
 @HiveType(typeId: 0)
 class UserLocal {

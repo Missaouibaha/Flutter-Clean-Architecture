@@ -98,6 +98,22 @@ class AppStrings {
   static const String seeAll = "See All";
   static const String hi = "Hi";
   static const String docViewsHint = "4.8 | 2533 views";
+
+  //search
+  static const String aboutTitle = "About";
+  static const String locationTitle = "Location";
+  static const String reviewsTitle = "Reviews";
+  static const String aboutMe = "About me";
+  static const String practicePlace = "Practice Place";
+  static const String workingTime = "Working Time :";
+  static const String appointmentPrice = "Appointment Price";
+  static const String aboutMeDescription =
+      "Dr {$name} , a dedicated {$docSpeciality} specialist known for her compassionate care and deep medical expertise";
+  static const String workingTimes= "09:00 -- 12:00 ||  14:00 -- 18:00 ";
+    static const String all = "All";
+
+
+  static const String locationMap ="Location Map " ;
   // api errors messages
   static const String badRequestError =
       "Something went wrong. Please try again.";
