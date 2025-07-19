@@ -65,7 +65,7 @@ User interface layer:
 * `screen/`: Screens like login, sign-up, home, etc.
 
 <p align="center">
-  <img src="./cleanArch.JPG" alt="Clean Architecture Diagram" width="600" height="800" />
+  <img src="https://github.com/user-attachments/assets/41facd0c-2cc4-45eb-b155-52fc404ff056" alt="Clean Architecture Riverpod Diagram" width="600" height="800" />
 </p>
 ---
 
